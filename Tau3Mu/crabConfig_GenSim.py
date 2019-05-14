@@ -11,7 +11,7 @@ config.JobType.psetName = 'Ds_Tau_3mu_pythia8.py'
 
 config.Data.outputPrimaryDataset = 'MinBias'
 config.Data.splitting = 'EventBased'
-config.Data.unitsPerJob = 100000 
+config.Data.unitsPerJob = 10000
 NJOBS = 5
 config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
 config.Data.inputDBS = 'phys03'
