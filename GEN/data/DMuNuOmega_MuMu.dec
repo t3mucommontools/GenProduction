@@ -1,0 +1,27 @@
+#
+# This is the decay file for the decay D+ ->  Mu+ Nu Omega ( Mu+ Mu-)
+#
+#
+# NickName: 
+#
+# Tested: Never
+# By: 
+# Date: 
+#
+Alias      MyD+        D+
+Alias      MyD-        D-
+ChargeConj MyD+        MyD-
+Alias      MyOmega     omega
+ChargeConj MyOmega     MyOmega
+#
+Decay MyD+
+  1.000        MyOmega     mu+     anti-nu_mu PHSP; 
+Enddecay
+CDecay MyD-
+
+
+#
+Decay MyOmega
+  1.000     mu+     mu-   PHOTOS VLL;
+Enddecay 
+End

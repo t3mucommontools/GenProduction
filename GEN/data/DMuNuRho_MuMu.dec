@@ -1,0 +1,27 @@
+#
+# This is the decay file for the decay D+ ->  Mu+ Nu Rho ( Mu+ Mu-)
+#
+#
+# NickName: 
+#
+# Tested: Never
+# By: 
+# Date: 
+#
+Alias      MyD+        D+
+Alias      MyD-        D-
+ChargeConj MyD+        MyD-
+Alias      MyRho       rho
+ChargeConj MyRho       MyRho
+#
+Decay MyD+
+  1.000        MyRho     mu+     nu_mu   PHOTOS ISGW2; 
+Enddecay
+CDecay MyD-
+
+
+#
+Decay MyRho
+  1.000     mu+     mu-   PHOTOS VLL;
+Enddecay 
+End
