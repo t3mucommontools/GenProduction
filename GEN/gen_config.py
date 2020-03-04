@@ -23,10 +23,14 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 
+# load the gen card + filters
+process.load('GenProduction.GEN.<gencard>')
+
+
 #process.load("GenProduction.CRAB.DPlusMuNuOmega_MuMuPi0_cfi")
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(5000)
+    input = cms.untracked.int32(2000)
 )
 
 # Input source
@@ -55,7 +59,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
         filterName = cms.untracked.string('')
     ),
     eventAutoFlushCompressedSize = cms.untracked.int32(20971520),
-    fileName = cms.untracked.string('file:DMuNuEta_MuMuGamma_13TeV_MC2018_SIM.root'),
+    fileName = cms.untracked.string('file:<outputfile>'),
     outputCommands = process.FEVTDEBUGEventContent.outputCommands,
     splitLevel = cms.untracked.int32(0)
 )
@@ -65,67 +69,8 @@ process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(500)
 # Other statements
 process.genstepfilter.triggerConditions=cms.vstring("generation_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:phase1_2018_realistic', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '102X_upgrade2018_realistic_v11', '')
 
-
-process.generator = cms.EDFilter("Pythia8GeneratorFilter",
-                         pythiaPylistVerbosity = cms.untracked.int32(0),
-                         pythiaHepMCVerbosity = cms.untracked.bool(False),
-                         comEnergy = cms.double(13000.0),
-                         ##crossSection = cms.untracked.double(54000000000), # Given by PYTHIA after running
-                         ##filterEfficiency = cms.untracked.double(0.004), # Given by PYTHIA after running
-                         maxEventsToPrint = cms.untracked.int32(2),
-                         ExternalDecays = cms.PSet(
-                          EvtGen130 = cms.untracked.PSet(
-                           decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
-                           particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
-                           user_decay_file = cms.vstring('GenProduction/GEN/data/DMuNuEta_MuMuGamma.dec'),
-                           list_forced_decays = cms.vstring('MyD+','MyD-','MyDs+','MyDs-'),
-                           convertPythiaCodes = cms.untracked.bool(False),
-                           operates_on_particles = cms.vint32()
-                          ),
-                          parameterSets = cms.vstring('EvtGen130')
-                         ),
-
-                         PythiaParameters = cms.PSet(
-                          pythia8CommonSettingsBlock,
-                          pythia8CUEP8M1SettingsBlock,
-                          processParameters = cms.vstring(
-                           'SoftQCD:nonDiffractive = on',
-                           'SoftQCD:singleDiffractive = on',
-                           'SoftQCD:doubleDiffractive = on'
-                          ),
-                          parameterSets = cms.vstring('pythia8CommonSettings',
-                                                      'pythia8CUEP8M1Settings',
-                                                      'processParameters',
-                                                     )
-                         )
-)
-
-
-
-process.DFilter = cms.EDFilter("PythiaFilter",
-    ParticleID = cms.untracked.int32(411)  #D_plus
-)
-
-process.DsFilter = cms.EDFilter("PythiaFilter",
-    ParticleID = cms.untracked.int32(431)  #Ds_plus
-)
-
-
-process.MuFilter = cms.EDFilter("MCParticlePairFilter",
-    MinPt = cms.untracked.vdouble(3, 3),
-    MaxEta = cms.untracked.vdouble(2.45, 2.45),
-    MinEta = cms.untracked.vdouble(-2.45, -2.45),
-    ParticleID1 = cms.untracked.vint32(13),
-    ParticleID2 = cms.untracked.vint32(13)
-)
-
-
-
-
-#process.ProductionFilterSequence = cms.Sequence(process.generator * ( process.DFilter + process.DsFilter) * process.MuFilter)
-process.ProductionFilterSequence = cms.Sequence(process.generator * ( process.DFilter + process.DsFilter) )
 
 # Path and EndPath definitions
 process.generation_step = cms.Path(process.pgen)
