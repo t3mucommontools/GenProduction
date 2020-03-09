@@ -57,8 +57,18 @@ MuFilter = cms.EDFilter("MCParticlePairFilter",
     ParticleID2 = cms.untracked.vint32(13)
 )
 
+multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
+                                        NumRequired = cms.int32(3),
+                                        AcceptMore = cms.bool(True),
+                                        ParticleID = cms.vint32(13,13,13),
+                                        PtMin = cms.vdouble(3.0, 3.0, 2.0),
+                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
+                                        Status = cms.vint32(1,1,1)
+)
 
 
 
-ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter) * MuFilter)
+
+#ProductionFilterSequence = cms.Sequence(generator * ( DFilter * DsFilter) * MuFilter)
+ProductionFilterSequence = cms.Sequence(generator * ( DFilter * DsFilter) * multimugenfilter)
 

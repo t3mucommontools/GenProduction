@@ -25,8 +25,8 @@ process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(options.maxEv
 process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 process.printTree = cms.EDAnalyzer("ParticleTreeDrawer",
                                    src = cms.InputTag("genParticles"),                                                                 
-                                   printP4 = cms.untracked.bool(False),
-                                   printPtEtaPhi = cms.untracked.bool(True),
+                                   printP4 = cms.untracked.bool(True),
+                                   printPtEtaPhi = cms.untracked.bool(False),
                                    printVertex = cms.untracked.bool(False),
                                    printStatus = cms.untracked.bool(True),
                                    printIndex = cms.untracked.bool(False),

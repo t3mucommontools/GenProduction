@@ -4,6 +4,11 @@ from Configuration.Generator.Pythia8CommonSettings_cfi import *
 from Configuration.Generator.Pythia8CUEP8M1Settings_cfi import *
 
 
+process = cms.Process('GEN')
+process.load('GeneratorInterface.genFilters.customthreemufilter_cfi')
+
+
+
 generator = cms.EDFilter("Pythia8GeneratorFilter",
                          pythiaPylistVerbosity = cms.untracked.int32(0),
                          pythiaHepMCVerbosity = cms.untracked.bool(False),
@@ -49,6 +54,8 @@ DsFilter = cms.EDFilter("PythiaFilter",
 )
 
 
+
+
 MuFilter = cms.EDFilter("MCParticlePairFilter",
     MinPt = cms.untracked.vdouble(3, 3),
     MaxEta = cms.untracked.vdouble(2.45, 2.45),
@@ -59,7 +66,35 @@ MuFilter = cms.EDFilter("MCParticlePairFilter",
 
 
 
+threemufilter = cms.EDFilter("CustomThreeMuFilter",
+                                        NumRequired = cms.int32(3),
+                                        AcceptMore = cms.bool(True),
+                                        ParticleID = cms.vint32(13,13,13),
+                                        PtMin = cms.vdouble(.5, .5, .5),
+                                        EtaMax = cms.vdouble(2222.45, 2222.45, 2222.45),
+#                                        PtMin = cms.vdouble(2.9, 2.9, 2.7),
+#                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
+                                        Status          = cms.vint32(1,1,1),
+                                        invMassMin      = cms.double(0),
+                                        invMassMax      = cms.double(222222),
+                                        maxDr           = cms.double(1.5)
+)
 
-#ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter) * MuFilter)
-ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter))
+
+multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
+                                        NumRequired = cms.int32(3),
+                                        AcceptMore = cms.bool(True),
+                                        ParticleID = cms.vint32(13,13,13),
+                                        PtMin = cms.vdouble(3, 3, 2),
+                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
+                                        Status = cms.vint32(1,1,1)
+)
+
+
+
+
+
+ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter)*multimugenfilter)
+#ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter)*threemufilter)
+
 

@@ -47,3 +47,8 @@ if __name__ == "__main__":
     crabconf.write ("config.Data.publication = True \n\n")
     crabconf.write ("config.Site.storageSite = 'T2_US_Florida' \n")
     crabconf.write ("dont_check_proxy =  1 \n")
+
+
+
+    print "Crab and gen fragment configured: "
+
