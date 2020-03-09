@@ -30,25 +30,30 @@ if __name__ == "__main__":
     crabconf=open("crab_cfg_"+jobprefix+".py","w")
     crabconf.write ("from WMCore.Configuration import Configuration  \n")
     crabconf.write ("config = Configuration()  \n\n")
+    crabconf.write ("config.section_(\"General\")  \n")
     crabconf.write ("config.General.requestName = '"+jobprefix+"'\n")
     crabconf.write ("config.General.workArea =  'crab_area' \n")
     crabconf.write ("config.General.transferOutputs = True \n")
     crabconf.write ("config.General.transferLogs = True \n\n")
+    crabconf.write ("config.section_(\"JobType\") \n")
     crabconf.write ("config.JobType.allowUndistributedCMSSW = True \n")
-    crabconf.write ("config.JobType.pluginName = 'Private_generation' \n")
+    crabconf.write ("config.JobType.pluginName = 'PRIVATEMC' \n")
     crabconf.write ("config.JobType.psetName = '%s'  \n\n"  % config)
+    crabconf.write ("config.section_(\"Data\")  \n\n")
     crabconf.write ("config.Data.outputPrimaryDataset = '%s' \n" % (jobprefix+"_GEN") )
     crabconf.write ("config.Data.splitting = 'EventBased' \n")
     crabconf.write ("config.Data.unitsPerJob = %s \n" % args.ne)
     crabconf.write ("NJOBS = %s \n" % args.nj)
     crabconf.write ("config.Data.totalUnits = config.Data.unitsPerJob * NJOBS \n")
     crabconf.write ("config.Data.inputDBS = 'phys03' \n")
-    crabconf.write ("config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB()) \n")
+    crabconf.write ("config.Data.outLFNDirBase = '/store/user/cherepan/' \n")
+    crabconf.write ("config.Data.outputDatasetTag = '%s' \n" % (jobprefix))
     crabconf.write ("config.Data.publication = True \n\n")
+    crabconf.write ("config.section_(\"Site\") \n")
     crabconf.write ("config.Site.storageSite = 'T2_US_Florida' \n")
     crabconf.write ("dont_check_proxy =  1 \n")
 
 
 
-    print "Crab and gen fragment configured: "
+    print "Crab and gen fragment configured "
 

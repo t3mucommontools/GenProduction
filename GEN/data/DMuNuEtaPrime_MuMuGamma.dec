@@ -29,6 +29,6 @@ CDecay MyDs-
 
 #
 Decay MyEta
-  1.000    gamma  mu+     mu-   PHOTOS SLL;
+  1.000    gamma  mu+     mu-   PHSP;
 Enddecay 
 End
