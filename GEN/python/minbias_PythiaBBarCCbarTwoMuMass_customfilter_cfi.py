@@ -23,12 +23,12 @@ mugenfilter = cms.EDFilter("MCParticlePairFilter",
 twomufilter = cms.EDFilter("CustomThreeMuFilter",
                                         NumRequired = cms.int32(2),
                                         ParticleID = cms.vint32(13,13),
-                                        PtMin = cms.vdouble(2.5, 2.5),
+                                        PtMin = cms.vdouble(3, 3),
                                         EtaMax = cms.vdouble(2.45, 2.45),
                                         Status = cms.vint32(1,1),
-                                        invMassMin = cms.double(0.5),
-                                        invMassMax = cms.double(1.777),
-                                        maxDr = cms.double(2.)
+                                        invMassMin = cms.double(0.0),
+                                        invMassMax = cms.double(1.8),
+                                        maxDr = cms.double(1.5)
  
 )
 
