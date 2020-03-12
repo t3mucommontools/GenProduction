@@ -10,6 +10,7 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--input-file",help="Name of the gen fragment  file stored in pythia dir; [Default: %(default)s] ", action="store", default = 'dat_as_cfi.py')
     parser.add_argument("-ne", "--ne",help="Units per job; [Default: %(default)s] ", action="store", default = 10000)
     parser.add_argument("-nj", "--nj",help="NJOBS; [Default: %(default)s] ", action="store", default = 20)
+    parser.add_argument("-tag", "--tag",help="Put the date tag for a conveniente navigation; [Default: %(default)s] ",  type=str, action="store", default = "10_03_2020")
     args = parser.parse_args()
 
     datasetsFile = 'python/'+args.input_file
@@ -33,7 +34,6 @@ if __name__ == "__main__":
     crabconf.write ("config.section_(\"General\")  \n")
     crabconf.write ("config.General.requestName = '"+jobprefix+"'\n")
     crabconf.write ("config.General.workArea =  'crab_area' \n")
-    crabconf.write ("config.General.transferOutputs = True \n")
     crabconf.write ("config.General.transferLogs = True \n\n")
     crabconf.write ("config.section_(\"JobType\") \n")
     crabconf.write ("config.JobType.allowUndistributedCMSSW = True \n")
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     crabconf.write ("config.JobType.psetName = '%s'  \n"  % config)
     crabconf.write ("config.JobType.eventsPerLumi = 100000 \n\n")
     crabconf.write ("config.section_(\"Data\")  \n\n")
-    crabconf.write ("config.Data.outputPrimaryDataset = '%s' \n" % (jobprefix+"_GEN") )
+    crabconf.write ("config.Data.outputPrimaryDataset = '%s' \n" % (jobprefix+"_GEN_"+args.tag) )
     crabconf.write ("config.Data.splitting = 'EventBased' \n")
     crabconf.write ("config.Data.unitsPerJob = %s \n" % args.ne)
     crabconf.write ("NJOBS = %s \n" % args.nj)
