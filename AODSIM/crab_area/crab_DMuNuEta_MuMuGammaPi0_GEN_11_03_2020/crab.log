@@ -1,0 +1,666 @@
+DEBUG 2020-03-14 13:54:14.059 UTC: 	 Running on: Linux lxplus729.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-14 13:54:14.075 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-14 13:54:14.076 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-14 13:54:14.076 UTC: 	 Found CRAB cache file /afs/cern.ch/user/c/cherepan/.crab3
+DEBUG 2020-03-14 13:54:14.084 UTC: 	 Checking credentials
+DEBUG 2020-03-14 13:54:14.084 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 13:54:14.084 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 13:54:14.789 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 63937
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:15.395 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 63936
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:15.396 UTC: 	 Proxy lifetime 63937 secs is different from voms extension lifetime 63936 secs for proxy: /tmp/x509up_u54841
+DEBUG 2020-03-14 13:54:15.396 UTC: 	 Proxy valid for 17:45:36 hours
+INFO 2020-03-14 13:54:15.396 UTC: 	 Will use CRAB configuration file crab_cfg_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020.py
+DEBUG 2020-03-14 13:54:15.396 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-03-14 13:54:15.402 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-03-14 13:54:15.524 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:15.524 UTC: 	 Checking credentials
+DEBUG 2020-03-14 13:54:15.524 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 13:54:15.524 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 13:54:16.230 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 63935
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:16.937 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 63935
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:16.937 UTC: 	 Proxy valid for 17:45:35 hours
+DEBUG 2020-03-14 13:54:17.543 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u54841 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:17.641 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+DEBUG 2020-03-14 13:54:17.751 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:17.751 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-03-14 13:54:17.751 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov_cmsweb.cern.ch for credential name
+DEBUG 2020-03-14 13:54:18.056 UTC: 	 Executing : 
+ command : myproxy-info -l 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5 -s myproxy.cern.ch
+ output : username: 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  timeleft: 454:34:53  (18.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:54:18.057 UTC: 	 Myproxy is valid: 1636493
+DEBUG 2020-03-14 13:54:18.057 UTC: 	 Command use: submit
+DEBUG 2020-03-14 13:54:18.057 UTC: 	 Options use: ['-c', 'crab_cfg_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020.py']
+DEBUG 2020-03-14 13:54:18.153 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-03-14 13:54:18.153 UTC: 	 Instance is prod
+DEBUG 2020-03-14 13:54:18.153 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-03-14 13:54:18.153 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-03-14 13:54:18.153 UTC: 	 Started submission
+DEBUG 2020-03-14 13:54:18.153 UTC: 	 Working on /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+DEBUG 2020-03-14 13:54:18.252 UTC: 	 Loading required information from the environment
+DEBUG 2020-03-14 13:54:18.252 UTC: 	 Found CMSSW_10_2_18 for slc7_amd64_gcc700 with base /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18
+DEBUG 2020-03-14 13:54:18.252 UTC: 	 Loading required information from the environment
+DEBUG 2020-03-14 13:54:18.252 UTC: 	 Found CMSSW_10_2_18 for slc7_amd64_gcc700 with base /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18
+DEBUG 2020-03-14 13:54:18.269 UTC: 	 UNIQUE NAME: tarUUID 8f4a9c2d-bc07-40ed-85dd-3b9c49972b9c 
+DEBUG 2020-03-14 13:54:18.270 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = True
+config.General.workArea = 'crab_area'
+config.General.requestName = 'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020'
+config.section_('JobType')
+config.JobType.psetName = 'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_DIGI.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.numCores = 4
+config.JobType.allowUndistributedCMSSW = True
+config.JobType.maxMemoryMB = 5000
+config.section_('Data')
+config.Data.inputDataset = '/DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/cherepan-DMuNuEta_MuMuGammaPi0_GEN_11_03_2020-2c9912c72108c252c02b22bd1c4743d6/USER'
+config.Data.outputDatasetTag = 'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD'
+config.Data.totalUnits = -1
+config.Data.unitsPerJob = 1
+config.Data.inputDBS = 'phys03'
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/user/cherepan/'
+config.Data.publication = True
+config.section_('Site')
+config.Site.storageSite = 'T2_US_Florida'
+
+DEBUG 2020-03-14 13:54:18.270 UTC: 	 self.config.JobType.psetName: DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_DIGI.py
+INFO 2020-03-14 13:54:18.270 UTC: 	 Importing CMSSW configuration DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_DIGI.py
+INFO 2020-03-14 13:54:26.783 UTC: 	 Finished importing CMSSW configuration DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_DIGI.py
+INFO 2020-03-14 13:54:26.783 UTC: 	 You are requesting more than 1 core per job. Please make sure that your multi-threaded code is thread-safe and CPU-efficient, and request the correct amount of memory since the default 'maxMemoryMB' value is meant for single core jobs.
+DEBUG 2020-03-14 13:54:26.783 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/inputs/PSet.py
+DEBUG 2020-03-14 13:54:30.071 UTC: 	 The following EDM output files will be collected: ['DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD.root']
+DEBUG 2020-03-14 13:54:30.071 UTC: 	 The following TFile output files will be collected: []
+DEBUG 2020-03-14 13:54:30.071 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2020-03-14 13:54:30.071 UTC: 	 Loading required information from the environment
+DEBUG 2020-03-14 13:54:30.071 UTC: 	 Found CMSSW_10_2_18 for slc7_amd64_gcc700 with base /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18
+DEBUG 2020-03-14 13:54:30.071 UTC: 	 Making tarball in /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/inputs/8f4a9c2d-bc07-40ed-85dd-3b9c49972b9cdefault.tgz
+DEBUG 2020-03-14 13:54:30.072 UTC: 	 Checking directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/lib
+DEBUG 2020-03-14 13:54:30.072 UTC: 	 Adding directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/lib to tarball
+DEBUG 2020-03-14 13:54:30.079 UTC: 	 Checking directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/biglib
+DEBUG 2020-03-14 13:54:30.080 UTC: 	 Adding directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/biglib to tarball
+DEBUG 2020-03-14 13:54:30.080 UTC: 	 Checking directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/module
+DEBUG 2020-03-14 13:54:30.095 UTC: 	 Adding data directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/CRAB/data to tarball
+DEBUG 2020-03-14 13:54:30.098 UTC: 	 Adding data directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/GEN/data to tarball
+DEBUG 2020-03-14 13:54:30.116 UTC: 	 Adding data directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GeneratorInterface/genFilters/interface to tarball
+DEBUG 2020-03-14 13:54:30.121 UTC: 	 Adding data directory /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/git/GeneratorInterface/genFilters/interface to tarball
+DEBUG 2020-03-14 13:54:31.243 UTC: 	 Uploading archive /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/inputs/8f4a9c2d-bc07-40ed-85dd-3b9c49972b9cdefault.tgz (1.057617.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-03-14 13:54:32.555 UTC: 	 Loading required information from the environment
+DEBUG 2020-03-14 13:54:32.555 UTC: 	 Found CMSSW_10_2_18 for slc7_amd64_gcc700 with base /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18
+DEBUG 2020-03-14 13:54:32.555 UTC: 	 Making tarball in /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/inputs/debugFiles.tgz
+DEBUG 2020-03-14 13:54:32.560 UTC: 	 Uploading archive /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/inputs/debugFiles.tgz (2 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-03-14 13:54:32.625 UTC: 	 Result uploading input files: 7c5d088ed138397e5daa8d7624af32d00ca7620d6caf2018604066a023f647c9.tar.gz 
+INFO 2020-03-14 13:54:32.625 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2020-03-14 13:54:32.626 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 1, 'useparent': 0, 'asyncdest': 'T2_US_Florida', 'algoargs': 1, 'cachefilename': '7c5d088ed138397e5daa8d7624af32d00ca7620d6caf2018604066a023f647c9.tar.gz', 'numcores': 4, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 5000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_10_2_18', 'edmoutfiles': ['DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD.root'], 'userfiles': [], 'primarydataset': '', 'inputdata': '/DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/cherepan-DMuNuEta_MuMuGammaPi0_GEN_11_03_2020-2c9912c72108c252c02b22bd1c4743d6/USER', 'lfn': '/store/user/cherepan/', 'dryrun': 0, 'workflow': 'crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 1, 'tfileoutfiles': [], 'oneEventMode': 0, 'debugfilename': 'bea1af41411a9146f06ef0181256897c6f3bd52d53ff52c9514535607464001b.tar.gz', 'saveoutput': 1, 'publication': 1, 'jobarch': 'slc7_amd64_gcc700', 'totalunits': -1, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD'} 
+DEBUG 2020-03-14 13:54:32.626 UTC: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=1&useparent=0&asyncdest=T2_US_Florida&algoargs=1&cachefilename=7c5d088ed138397e5daa8d7624af32d00ca7620d6caf2018604066a023f647c9.tar.gz&numcores=4&generator=pythia&maxmemory=5000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_2_18&primarydataset=&inputdata=%2FDMuNuEta_MuMuGammaPi0_GEN_11_03_2020%2Fcherepan-DMuNuEta_MuMuGammaPi0_GEN_11_03_2020-2c9912c72108c252c02b22bd1c4743d6%2FUSER&lfn=%2Fstore%2Fuser%2Fcherepan%2F&dryrun=0&workflow=crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=bea1af41411a9146f06ef0181256897c6f3bd52d53ff52c9514535607464001b.tar.gz&saveoutput=1&publication=1&jobarch=slc7_amd64_gcc700&totalunits=-1&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD&edmoutfiles=DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD.root
+DEBUG 2020-03-14 13:54:32.771 UTC: 	 Result: {u'result': [{u'RequestName': u'200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020'}]}
+INFO 2020-03-14 13:54:32.773 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2020-03-14 13:54:32.774 UTC: 	 Task name: 200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 13:54:32.774 UTC: 	 Project dir: crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 13:54:32.774 UTC: 	 Please use 'crab status -d crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020' to check how the submission process proceeds.
+DEBUG 2020-03-14 13:54:32.774 UTC: 	 About to return
+INFO 2020-03-14 13:54:32.776 UTC: 	 Log file is /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/crab.log
+DEBUG 2020-03-14 13:57:07.951 UTC: 	 Running on: Linux lxplus729.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-14 13:57:07.969 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-14 13:57:07.969 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-14 13:57:07.969 UTC: 	 Found CRAB cache file /afs/cern.ch/user/c/cherepan/.crab3
+DEBUG 2020-03-14 13:57:07.980 UTC: 	 Checking credentials
+DEBUG 2020-03-14 13:57:07.981 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 13:57:07.981 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 13:57:08.787 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 63763
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:57:09.495 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 63762
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:57:09.495 UTC: 	 Proxy lifetime 63763 secs is different from voms extension lifetime 63762 secs for proxy: /tmp/x509up_u54841
+DEBUG 2020-03-14 13:57:09.495 UTC: 	 Proxy valid for 17:42:42 hours
+DEBUG 2020-03-14 13:57:09.615 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:57:09.615 UTC: 	 Checking credentials
+DEBUG 2020-03-14 13:57:09.615 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 13:57:09.615 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 13:57:10.320 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 63761
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:57:10.927 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 63761
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:57:10.927 UTC: 	 Proxy valid for 17:42:41 hours
+DEBUG 2020-03-14 13:57:11.015 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+DEBUG 2020-03-14 13:57:11.126 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:57:11.126 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-03-14 13:57:11.126 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov_cmsweb.cern.ch for credential name
+DEBUG 2020-03-14 13:57:11.531 UTC: 	 Executing : 
+ command : myproxy-info -l 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5 -s myproxy.cern.ch
+ output : username: 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  timeleft: 454:32:00  (18.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 13:57:11.532 UTC: 	 Myproxy is valid: 1636320
+DEBUG 2020-03-14 13:57:11.533 UTC: 	 Command use: status
+DEBUG 2020-03-14 13:57:11.533 UTC: 	 Options use: ['-d', 'crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', '--long']
+DEBUG 2020-03-14 13:57:11.613 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-03-14 13:57:11.613 UTC: 	 Instance is prod
+DEBUG 2020-03-14 13:57:11.613 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-03-14 13:57:11.613 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-03-14 13:57:11.700 UTC: 	 Got information from server oracle database: {u'result': [u'200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-03-14 13:54:32.763594', u'None', u'2020-03-14 13:55:29.223460', u'None', u'CMSSW_10_2_18', u'slc7_amd64_gcc700', u'/DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/cherepan-DMuNuEta_MuMuGammaPi0_GEN_11_03_2020-2c9912c72108c252c02b22bd1c4743d6/USER', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'7c5d088ed138397e5daa8d7624af32d00ca7620d6caf2018604066a023f647c9.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'cherepan', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov', u'cms', u'None', u'None', u'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD-00000000000000000000000000000000', u'F', u'T2_US_Florida', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u'[]', u"['DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'4', u'5000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/cherepan/', u'F', u'None', u'F', u'None', u'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'bea1af41411a9146f06ef0181256897c6f3bd52d53ff52c9514535607464001b.tar.gz', u'49096177', u'filetransfers', u'F', u'2001:1458:d00:2d::100:1a2', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-03-14 13:57:11.701 UTC: 	 CRAB project directory:		/afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 13:57:11.701 UTC: 	 Task name:			200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 13:57:11.701 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-03-14 13:57:11.701 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-03-14 13:57:11.701 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200314_135432%3Acherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 13:57:11.702 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=cherepan&var-task=200314_135432%3Acherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 13:57:11.702 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-03-14 13:57:11.702 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 49096177)
+DEBUG 2020-03-14 13:57:11.702 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+DEBUG 2020-03-14 13:57:11.798 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+DEBUG 2020-03-14 13:57:11.798 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/status_cache
+DEBUG 2020-03-14 13:57:11.850 UTC: 	 Got information from status cache file: {'24': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096201.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '25': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096202.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '26': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194147.0], 'JobIds': ['49096203.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '27': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096204.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '20': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096198.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '21': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096216.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '22': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096199.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '23': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096200.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '28': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096205.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '29': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096207.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194142.0], 'JobIds': ['49096179.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096181.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096180.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096183.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096182.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '7': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096185.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '6': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096184.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '9': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096187.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '8': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096186.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '13': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096191.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '12': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096190.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '11': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096189.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '10': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096188.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '39': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194154.0], 'JobIds': ['49096217.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '38': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096215.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '15': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096193.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '14': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096192.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '17': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096195.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '16': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096194.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '19': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096197.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '18': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096196.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '31': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096208.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '30': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096206.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '37': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096214.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '36': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096213.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '35': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096211.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '34': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096212.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '33': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096210.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '32': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096209.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
+INFO 2020-03-14 13:57:11.850 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-03-14 13:57:11.850 UTC: 	 
+Jobs status:                    idle         		100.0% (39/39)
+INFO 2020-03-14 13:57:11.850 UTC: 	 
+No publication information available yet
+INFO 2020-03-14 13:57:11.851 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+   1 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   2 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   3 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   4 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   5 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   6 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   7 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   8 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   9 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  10 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  11 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  12 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  13 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  14 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  15 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  16 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  17 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  18 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  19 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  20 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  21 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  22 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  23 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  24 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  25 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  26 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  27 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  28 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  29 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  30 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  31 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  32 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  33 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  34 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  35 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  36 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  37 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  38 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  39 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+DEBUG 2020-03-14 13:57:11.851 UTC: 	 
+ Job Cluster Id
+  24 ['49096201.0']
+  25 ['49096202.0']
+  26 ['49096203.0']
+  27 ['49096204.0']
+  20 ['49096198.0']
+  21 ['49096216.0']
+  22 ['49096199.0']
+  23 ['49096200.0']
+  28 ['49096205.0']
+  29 ['49096207.0']
+   1 ['49096179.0']
+   3 ['49096181.0']
+   2 ['49096180.0']
+   5 ['49096183.0']
+   4 ['49096182.0']
+   7 ['49096185.0']
+   6 ['49096184.0']
+   9 ['49096187.0']
+   8 ['49096186.0']
+  13 ['49096191.0']
+  12 ['49096190.0']
+  11 ['49096189.0']
+  10 ['49096188.0']
+  39 ['49096217.0']
+  38 ['49096215.0']
+  15 ['49096193.0']
+  14 ['49096192.0']
+  17 ['49096195.0']
+  16 ['49096194.0']
+  19 ['49096197.0']
+  18 ['49096196.0']
+  31 ['49096208.0']
+  30 ['49096206.0']
+  37 ['49096214.0']
+  36 ['49096213.0']
+  35 ['49096211.0']
+  34 ['49096212.0']
+  33 ['49096210.0']
+  32 ['49096209.0']
+INFO 2020-03-14 13:57:11.860 UTC: 	 Log file is /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/crab.log
+DEBUG 2020-03-14 14:11:10.669 UTC: 	 Running on: Linux lxplus729.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-14 14:11:10.687 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-14 14:11:10.687 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-14 14:11:10.688 UTC: 	 Found CRAB cache file /afs/cern.ch/user/c/cherepan/.crab3
+DEBUG 2020-03-14 14:11:10.700 UTC: 	 Checking credentials
+DEBUG 2020-03-14 14:11:10.700 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 14:11:10.700 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 14:11:11.505 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 62920
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:11:12.212 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 62919
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:11:12.212 UTC: 	 Proxy lifetime 62920 secs is different from voms extension lifetime 62919 secs for proxy: /tmp/x509up_u54841
+DEBUG 2020-03-14 14:11:12.212 UTC: 	 Proxy valid for 17:28:39 hours
+DEBUG 2020-03-14 14:11:12.332 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:11:12.332 UTC: 	 Checking credentials
+DEBUG 2020-03-14 14:11:12.332 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 14:11:12.332 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 14:11:13.039 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 62919
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:11:13.745 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 62918
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:11:13.745 UTC: 	 Proxy lifetime 62919 secs is different from voms extension lifetime 62918 secs for proxy: /tmp/x509up_u54841
+DEBUG 2020-03-14 14:11:13.745 UTC: 	 Proxy valid for 17:28:38 hours
+DEBUG 2020-03-14 14:11:13.828 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+DEBUG 2020-03-14 14:11:13.939 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:11:13.939 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-03-14 14:11:13.939 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov_cmsweb.cern.ch for credential name
+DEBUG 2020-03-14 14:11:14.544 UTC: 	 Executing : 
+ command : myproxy-info -l 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5 -s myproxy.cern.ch
+ output : username: 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  timeleft: 454:17:57  (18.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:11:14.545 UTC: 	 Myproxy is valid: 1635477
+DEBUG 2020-03-14 14:11:14.546 UTC: 	 Command use: status
+DEBUG 2020-03-14 14:11:14.546 UTC: 	 Options use: ['-d', 'crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', '--long']
+DEBUG 2020-03-14 14:11:14.642 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-03-14 14:11:14.642 UTC: 	 Instance is prod
+DEBUG 2020-03-14 14:11:14.642 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-03-14 14:11:14.642 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-03-14 14:11:14.783 UTC: 	 Got information from server oracle database: {u'result': [u'200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-03-14 13:54:32.763594', u'None', u'2020-03-14 13:55:29.223460', u'None', u'CMSSW_10_2_18', u'slc7_amd64_gcc700', u'/DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/cherepan-DMuNuEta_MuMuGammaPi0_GEN_11_03_2020-2c9912c72108c252c02b22bd1c4743d6/USER', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'7c5d088ed138397e5daa8d7624af32d00ca7620d6caf2018604066a023f647c9.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'cherepan', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov', u'cms', u'None', u'None', u'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD-00000000000000000000000000000000', u'F', u'T2_US_Florida', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u'[]', u"['DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'4', u'5000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/cherepan/', u'F', u'None', u'F', u'None', u'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'bea1af41411a9146f06ef0181256897c6f3bd52d53ff52c9514535607464001b.tar.gz', u'49096177', u'filetransfers', u'F', u'2001:1458:d00:2d::100:1a2', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-03-14 14:11:14.783 UTC: 	 CRAB project directory:		/afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:11:14.784 UTC: 	 Task name:			200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:11:14.784 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-03-14 14:11:14.784 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-03-14 14:11:14.784 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200314_135432%3Acherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:11:14.784 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=cherepan&var-task=200314_135432%3Acherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:11:14.784 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-03-14 14:11:14.784 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 49096177)
+DEBUG 2020-03-14 14:11:14.784 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+DEBUG 2020-03-14 14:11:14.914 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+DEBUG 2020-03-14 14:11:14.914 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/status_cache
+DEBUG 2020-03-14 14:11:14.967 UTC: 	 Got information from status cache file: {'24': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096201.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '25': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096202.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '26': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194147.0], 'JobIds': ['49096203.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '27': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096204.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '20': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096198.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '21': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096216.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '22': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096199.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '23': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096200.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '28': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096205.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '29': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096207.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194142.0], 'JobIds': ['49096179.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096181.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096180.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096183.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096182.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '7': {'Retries': 0, 'WallDurations': [9.0, 178.68880701065063], 'StartTimes': [1584194625.0], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096185.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [49584], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [0.0]}, '6': {'Retries': 0, 'WallDurations': [8.0, 178.68880701065063], 'StartTimes': [1584194625.0], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096184.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [49388], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [0.0]}, '9': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096187.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '8': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096186.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '13': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096191.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '12': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096190.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '11': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096189.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '10': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096188.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '39': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194154.0], 'JobIds': ['49096217.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '38': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096215.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '15': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096193.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '14': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096192.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '17': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096195.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '16': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096194.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '19': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096197.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '18': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096196.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '31': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096208.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '30': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096206.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '37': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096214.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '36': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096213.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '35': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096211.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '34': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096212.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '33': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096210.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '32': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096209.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
+INFO 2020-03-14 14:11:14.967 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-03-14 14:11:14.968 UTC: 	 
+Jobs status:                    idle         		 94.9% (37/39)
+INFO 2020-03-14 14:11:14.968 UTC: 	 				running      		  5.1% ( 2/39)
+INFO 2020-03-14 14:11:14.968 UTC: 	 
+No publication information available yet
+INFO 2020-03-14 14:11:14.969 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+   1 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   2 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   3 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   4 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   5 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   6 running      T2_US_Florida           0:02:58         48          0          0          0    0:00:08         Unknown
+   7 running      T2_US_Florida           0:02:58         48          0          0          0    0:00:09         Unknown
+   8 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   9 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  10 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  11 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  12 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  13 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  14 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  15 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  16 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  17 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  18 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  19 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  20 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  21 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  22 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  23 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  24 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  25 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  26 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  27 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  28 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  29 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  30 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  31 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  32 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  33 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  34 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  35 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  36 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  37 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  38 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  39 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+DEBUG 2020-03-14 14:11:14.969 UTC: 	 
+ Job Cluster Id
+  24 ['49096201.0']
+  25 ['49096202.0']
+  26 ['49096203.0']
+  27 ['49096204.0']
+  20 ['49096198.0']
+  21 ['49096216.0']
+  22 ['49096199.0']
+  23 ['49096200.0']
+  28 ['49096205.0']
+  29 ['49096207.0']
+   1 ['49096179.0']
+   3 ['49096181.0']
+   2 ['49096180.0']
+   5 ['49096183.0']
+   4 ['49096182.0']
+   7 ['49096185.0']
+   6 ['49096184.0']
+   9 ['49096187.0']
+   8 ['49096186.0']
+  13 ['49096191.0']
+  12 ['49096190.0']
+  11 ['49096189.0']
+  10 ['49096188.0']
+  39 ['49096217.0']
+  38 ['49096215.0']
+  15 ['49096193.0']
+  14 ['49096192.0']
+  17 ['49096195.0']
+  16 ['49096194.0']
+  19 ['49096197.0']
+  18 ['49096196.0']
+  31 ['49096208.0']
+  30 ['49096206.0']
+  37 ['49096214.0']
+  36 ['49096213.0']
+  35 ['49096211.0']
+  34 ['49096212.0']
+  33 ['49096210.0']
+  32 ['49096209.0']
+INFO 2020-03-14 14:11:14.977 UTC: 	 Log file is /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/crab.log
+DEBUG 2020-03-14 14:15:43.662 UTC: 	 Running on: Linux lxplus729.cern.ch 3.10.0-1062.9.1.el7.x86_64 #1 SMP Fri Dec 6 15:49:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-14 14:15:43.681 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-14 14:15:43.681 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-14 14:15:43.681 UTC: 	 Found CRAB cache file /afs/cern.ch/user/c/cherepan/.crab3
+DEBUG 2020-03-14 14:15:43.693 UTC: 	 Checking credentials
+DEBUG 2020-03-14 14:15:43.694 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 14:15:43.694 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 14:15:44.500 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 62647
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:15:45.208 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 62646
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:15:45.208 UTC: 	 Proxy lifetime 62647 secs is different from voms extension lifetime 62646 secs for proxy: /tmp/x509up_u54841
+DEBUG 2020-03-14 14:15:45.208 UTC: 	 Proxy valid for 17:24:06 hours
+DEBUG 2020-03-14 14:15:45.328 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:15:45.328 UTC: 	 Checking credentials
+DEBUG 2020-03-14 14:15:45.328 UTC: 	 Found proxy file /tmp/x509up_u54841
+DEBUG 2020-03-14 14:15:45.328 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-14 14:15:46.034 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -timeleft
+ output : 62646
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:15:46.743 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u54841 -actimeleft
+ output : 62645
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:15:46.743 UTC: 	 Proxy lifetime 62646 secs is different from voms extension lifetime 62645 secs for proxy: /tmp/x509up_u54841
+DEBUG 2020-03-14 14:15:46.743 UTC: 	 Proxy valid for 17:24:05 hours
+DEBUG 2020-03-14 14:15:46.847 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+DEBUG 2020-03-14 14:15:46.958 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:15:46.959 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-03-14 14:15:46.959 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov_cmsweb.cern.ch for credential name
+DEBUG 2020-03-14 14:15:47.264 UTC: 	 Executing : 
+ command : myproxy-info -l 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5 -s myproxy.cern.ch
+ output : username: 4e1fe89e4fbbd2fbdf657a4fbb28c99aa06ff7b5
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddivm2|mytw).cern.ch
+  timeleft: 454:13:24  (18.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-14 14:15:47.265 UTC: 	 Myproxy is valid: 1635204
+DEBUG 2020-03-14 14:15:47.266 UTC: 	 Command use: status
+DEBUG 2020-03-14 14:15:47.266 UTC: 	 Options use: ['-d', 'crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', '--long']
+DEBUG 2020-03-14 14:15:47.381 UTC: 	 CRABClient version: 3.3.2001
+DEBUG 2020-03-14 14:15:47.381 UTC: 	 Instance is prod
+DEBUG 2020-03-14 14:15:47.381 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-03-14 14:15:47.381 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-03-14 14:15:47.499 UTC: 	 Got information from server oracle database: {u'result': [u'200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2020-03-14 13:54:32.763594', u'None', u'2020-03-14 13:55:29.223460', u'None', u'CMSSW_10_2_18', u'slc7_amd64_gcc700', u'/DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/cherepan-DMuNuEta_MuMuGammaPi0_GEN_11_03_2020-2c9912c72108c252c02b22bd1c4743d6/USER', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", u'7c5d088ed138397e5daa8d7624af32d00ca7620d6caf2018604066a023f647c9.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'cherepan', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cherepan/CN=701399/CN=Vladimir Cherepanov', u'cms', u'None', u'None', u'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD-00000000000000000000000000000000', u'F', u'T2_US_Florida', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u'[]', u"['DMuNuEta_MuMuGammaPi0_GEN_11_03_2020_AOD.root']", u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'4', u'5000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/user/cherepan/', u'F', u'None', u'F', u'None', u'DMuNuEta_MuMuGammaPi0_GEN_11_03_2020', u'None', u'bea1af41411a9146f06ef0181256897c6f3bd52d53ff52c9514535607464001b.tar.gz', u'49096177', u'filetransfers', u'F', u'2001:1458:d00:2d::100:1a2', u'-1.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2020-03-14 14:15:47.500 UTC: 	 CRAB project directory:		/afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:15:47.500 UTC: 	 Task name:			200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:15:47.500 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2020-03-14 14:15:47.500 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2020-03-14 14:15:47.500 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200314_135432%3Acherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:15:47.500 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=cherepan&var-task=200314_135432%3Acherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+INFO 2020-03-14 14:15:47.500 UTC: 	 In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2020-03-14 14:15:47.500 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 49096177)
+DEBUG 2020-03-14 14:15:47.501 UTC: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+DEBUG 2020-03-14 14:15:47.575 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020
+DEBUG 2020-03-14 14:15:47.575 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms1731/200314_135432:cherepan_crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/status_cache
+DEBUG 2020-03-14 14:15:47.640 UTC: 	 Got information from status cache file: {'24': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096201.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '25': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096202.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '26': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194147.0], 'JobIds': ['49096203.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '27': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096204.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '20': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096198.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '21': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096216.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '22': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096199.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '23': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096200.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '28': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096205.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '29': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096207.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194142.0], 'JobIds': ['49096179.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096181.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096180.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096183.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194143.0], 'JobIds': ['49096182.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '7': {'Retries': 0, 'WallDurations': [9.0, 309.0], 'StartTimes': [1584194625.0], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096185.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [2298100], 'TotalUserCpuTimeHistory': [391.0], 'SiteHistory': ['Unknown', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [18.0]}, '6': {'Retries': 0, 'WallDurations': [8.0, 308.0], 'StartTimes': [1584194625.0], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096184.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [2300384], 'TotalUserCpuTimeHistory': [384.0], 'SiteHistory': ['Unknown', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [18.0]}, '9': {'Retries': 0, 'WallDurations': [8.0, 215.77648305892944], 'StartTimes': [1584194888.0], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096187.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [130460], 'TotalUserCpuTimeHistory': [2.0], 'SiteHistory': ['Unknown', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [0.0]}, '8': {'Retries': 0, 'WallDurations': [9.0, 215.77648305892944], 'StartTimes': [1584194888.0], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096186.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [51248], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown', 'T2_US_Florida'], 'TotalSysCpuTimeHistory': [0.0]}, '39': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194154.0], 'JobIds': ['49096217.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '38': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096215.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '11': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096189.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '10': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096188.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '13': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096191.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '12': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194144.0], 'JobIds': ['49096190.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '15': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096193.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '14': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096192.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '17': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096195.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '16': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194145.0], 'JobIds': ['49096194.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '19': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096197.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '18': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194146.0], 'JobIds': ['49096196.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '31': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096208.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '30': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096206.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '37': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096214.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '36': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096213.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '35': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096211.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '34': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096212.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '33': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194153.0], 'JobIds': ['49096210.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '32': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1584194152.0], 'JobIds': ['49096209.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
+INFO 2020-03-14 14:15:47.640 UTC: 	 Status on the scheduler:	SUBMITTED
+INFO 2020-03-14 14:15:47.640 UTC: 	 
+Jobs status:                    idle         		 89.7% (35/39)
+INFO 2020-03-14 14:15:47.640 UTC: 	 				running      		 10.3% ( 4/39)
+INFO 2020-03-14 14:15:47.641 UTC: 	 
+No publication information available yet
+INFO 2020-03-14 14:15:47.641 UTC: 	 
+Extended Job Status Table:
+
+ Job State        Most Recent Site        Runtime   Mem (MB)      CPU %    Retries   Restarts      Waste       Exit Code
+   1 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   2 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   3 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   4 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   5 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+   6 running      T2_US_Florida           0:05:08       2246         33          0          0    0:00:08         Unknown
+   7 running      T2_US_Florida           0:05:09       2244         33          0          0    0:00:09         Unknown
+   8 running      T2_US_Florida           0:03:35         50          0          0          0    0:00:09         Unknown
+   9 running      T2_US_Florida           0:03:35        127          0          0          0    0:00:08         Unknown
+  10 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  11 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  12 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  13 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  14 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  15 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  16 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  17 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  18 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  19 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  20 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  21 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  22 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  23 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  24 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  25 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  26 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  27 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  28 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  29 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  30 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  31 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  32 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  33 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  34 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  35 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  36 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  37 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  38 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+  39 idle         Unknown                 0:00:00          0    Unknown          0          0    0:00:00         Unknown
+DEBUG 2020-03-14 14:15:47.642 UTC: 	 
+ Job Cluster Id
+  24 ['49096201.0']
+  25 ['49096202.0']
+  26 ['49096203.0']
+  27 ['49096204.0']
+  20 ['49096198.0']
+  21 ['49096216.0']
+  22 ['49096199.0']
+  23 ['49096200.0']
+  28 ['49096205.0']
+  29 ['49096207.0']
+   1 ['49096179.0']
+   3 ['49096181.0']
+   2 ['49096180.0']
+   5 ['49096183.0']
+   4 ['49096182.0']
+   7 ['49096185.0']
+   6 ['49096184.0']
+   9 ['49096187.0']
+   8 ['49096186.0']
+  39 ['49096217.0']
+  38 ['49096215.0']
+  11 ['49096189.0']
+  10 ['49096188.0']
+  13 ['49096191.0']
+  12 ['49096190.0']
+  15 ['49096193.0']
+  14 ['49096192.0']
+  17 ['49096195.0']
+  16 ['49096194.0']
+  19 ['49096197.0']
+  18 ['49096196.0']
+  31 ['49096208.0']
+  30 ['49096206.0']
+  37 ['49096214.0']
+  36 ['49096213.0']
+  35 ['49096211.0']
+  34 ['49096212.0']
+  33 ['49096210.0']
+  32 ['49096209.0']
+INFO 2020-03-14 14:15:47.650 UTC: 	 Log file is /afs/cern.ch/work/c/cherepan/Generation/CMSSW_10_2_18/src/GenProduction/AODSIM/crab_area/crab_DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/crab.log
