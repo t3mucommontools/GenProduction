@@ -8,6 +8,7 @@ import argparse
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--input-sample",help="Path to the GEN sample; [Default: %(default)s] ", type = str, action="store", default = 'dat_as_cfi.py')
+    parser.add_argument("-nu", "--nu",help="Units per job; [Default: %(default)s] ", action="store", default = 20)
     parser.add_argument("-tag", "--tag",help="Put the date tag for a conveniente navigation; [Default: %(default)s] ",  type=str, action="store", default = "14_03_2020")
     args = parser.parse_args()
 
@@ -40,7 +41,7 @@ if __name__ == "__main__":
     crabconf.write ("config.section_(\"Data\")  \n\n")
     crabconf.write ("config.Data.inputDataset = '%s' \n" % (sample) )
     crabconf.write ("config.Data.splitting = 'FileBased' \n")
-    crabconf.write ("config.Data.unitsPerJob = 1 \n")
+    crabconf.write ("config.Data.unitsPerJob = %s \n" % args.nu)
     crabconf.write ("config.Data.totalUnits = -1 \n")
     crabconf.write ("config.Data.inputDBS = 'phys03' \n")
     crabconf.write ("config.Data.outLFNDirBase = '/store/user/cherepan/' \n")
