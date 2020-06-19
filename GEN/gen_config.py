@@ -27,7 +27,7 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('GenProduction.GEN.<gencard>')
 
 
-#process.load("GenProduction.CRAB.DPlusMuNuOmega_MuMuPi0_cfi")
+
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(2000)
@@ -35,7 +35,6 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("EmptySource")
-
 process.options = cms.untracked.PSet(
 
 )
@@ -64,8 +63,13 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0)
 )
 
+
+
+process.options.numberOfThreads=cms.untracked.uint32(2)
+process.options.numberOfStreams=cms.untracked.uint32(0)
+
 # Additional output definition
-process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(500)
+process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1000)
 # Other statements
 process.genstepfilter.triggerConditions=cms.vstring("generation_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
@@ -90,7 +94,6 @@ for path in process.paths:
 
 
 # Customisation from command line
-
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)

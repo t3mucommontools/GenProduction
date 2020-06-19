@@ -19,7 +19,7 @@ if __name__ == "__main__":
         sys.exit()
 
     jobprefix = args.input_file.split("_")[0]+"_"+args.input_file.split("_")[1]
-    config = jobprefix+"_EvtGen_GEN.py"
+    config = jobprefix+"_GEN.py"
     with open('gen_config.py', 'r') as file :
             filedata = file.read()
             filedata = filedata.replace('<gencard>', args.input_file[:-3]) # chomp .py at the end
@@ -39,7 +39,9 @@ if __name__ == "__main__":
     crabconf.write ("config.JobType.allowUndistributedCMSSW = True \n")
     crabconf.write ("config.JobType.pluginName = 'PRIVATEMC' \n")
     crabconf.write ("config.JobType.psetName = '%s'  \n"  % config)
-    crabconf.write ("config.JobType.eventsPerLumi = 100000 \n\n")
+    crabconf.write ("config.JobType.eventsPerLumi = 30000 \n")
+    crabconf.write ("config.JobType.allowUndistributedCMSSW = True \n")
+    crabconf.write ("config.JobType.numCores = 2 \n\n")
     crabconf.write ("config.section_(\"Data\")  \n\n")
     crabconf.write ("config.Data.outputPrimaryDataset = '%s' \n" % (jobprefix+"_GEN_"+args.tag) )
     crabconf.write ("config.Data.splitting = 'EventBased' \n")
@@ -56,5 +58,6 @@ if __name__ == "__main__":
 
 
 
-    print "Crab and gen fragment configured "
-
+    print "Crab and gen fragment configured: "
+    print "crab_cfg_"+jobprefix+".py"
+    print config
