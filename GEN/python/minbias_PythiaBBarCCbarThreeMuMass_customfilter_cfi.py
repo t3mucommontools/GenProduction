@@ -32,12 +32,12 @@ threemufilter = cms.EDFilter("CustomThreeMuFilter",
                                         NumRequired = cms.int32(3),
                                         AcceptMore = cms.bool(True),
                                         ParticleID = cms.vint32(13,13,13),
-                                        PtMin = cms.vdouble(3, 3, 2),
+                                        PtMin = cms.vdouble(3, 3, 3),
                                         EtaMax = cms.vdouble(2.45, 2.45, 2.45),
                                         Status = cms.vint32(1,1,1),
                                         invMassMin      = cms.double(1.5),
                                         invMassMax      = cms.double(2.2),
-                                        maxDr           = cms.double(1.3)
+                                        maxDr           = cms.double(1.5)
 )
 
 
@@ -98,7 +98,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
     ),
     comEnergy = cms.double(13000.0),
     crossSection = cms.untracked.double(999),
-    filterEfficiency = cms.untracked.double(0.0001),
+#    filterEfficiency = cms.untracked.double(0.0001),
     maxEventsToPrint = cms.untracked.int32(1),
     pythiaHepMCVerbosity = cms.untracked.bool(False),
     pythiaPylistVerbosity = cms.untracked.int32(1)
