@@ -8,7 +8,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
     pythiaPylistVerbosity = cms.untracked.int32(1),
     filterEfficiency = cms.untracked.double(1.),
     pythiaHepMCVerbosity = cms.untracked.bool(False),
-    comEnergy = cms.double(14000.),
+    comEnergy = cms.double(13000.),
     PythiaParameters = cms.PSet(
         pythia8CommonSettingsBlock,
         pythia8CUEP8M1SettingsBlock,

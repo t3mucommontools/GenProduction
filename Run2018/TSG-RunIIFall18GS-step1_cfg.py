@@ -2,7 +2,11 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: Configuration/GenProduction/python/TSG-RunIIFall18GS-00006-fragment.py --fileout file:TSG-RunIIFall18GS-00006.root --mc --eventcontent RAWSIM --datatier GEN-SIM --conditions 102X_upgrade2018_realistic_v11 --beamspot Realistic25ns13TeVEarly2018Collision --step GEN,SIM --nThreads 4 --geometry DB:Extended --era Run2_2018 --python_filename TSG-RunIIFall18GS-00006_1_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 125423
+# with command line options: Configuration/GenProduction/python/TSG-RunIIFall18GS-00006-fragment.py 
+#--fileout file:TSG-RunIIFall18GS-00006.root --mc --eventcontent RAWSIM --datatier GEN-SIM 
+#--conditions 102X_upgrade2018_realistic_v11 --beamspot Realistic25ns13TeVEarly2018Collision 
+#--step GEN,SIM --nThreads 4 --geometry DB:Extended --era Run2_2018 --python_filename TSG-RunIIFall18GS-00006_1_cfg.py 
+#--no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 125423
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
