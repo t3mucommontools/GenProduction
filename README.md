@@ -13,13 +13,20 @@ scram b -j 8
 cd GenProduction
 ```
 
-The fragments for 2018 are stored in MCProduction_2018. The default filter settings are ds filter followed by a muon pair filter with pT_min (2.7,2.7) GeV. If necessary, change the filter settings. Then, change the parameters in crab configuration files (crab_cfg_DsTau3Mu_GEN.py, crab_cfg_BuTau3Mu_GEN.py, crab_cfg_BdTau3Mu_GEN.py, crab_cfg_DsPhiPi_GEN.py). Make sure have write access to the storage site mention in the config file. For submitting crab jobs to generate DsTau3Mu sample, do
+There are 3 directories: GEN, DIGI, AODSIM. 
+
+GEN (GENeration):
+Pythia cards can be found in GEN/pythia, the QCD ( b-filter ) with muons filters for example is Pythia_BQuarkFilterTwoMuon_cfi.py.
+One can setup the configs as:
 
 ```
-cd CRAB
-source /cvmfs/cms.cern.ch/crab3/crab.sh
-voms-proxy-init --voms cms --valid 192:00
-crab submit -c crab_cfg_DsTau3Mu_GEN.py
+./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <number of jobs> -tag <Tag>
 ```
 
-For running step 2 and step 3 change the `config.Data.inputDataset` parameter in step2 and step3 crab configuration files in CRAB.
+where tag will be used as a prefix to produced samples, for me the command would look like
+
+```
+./configureGenJob.py -f Pythia_BQuarkFilterTwoMuon_cfi.py  -ne 1000000 -nj 10000 -tag VladimirGeneration22_06_2020
+```
+
+This will create corresponding fragment and crab config, the last can be submitted: crab submit -c <crab_config>
