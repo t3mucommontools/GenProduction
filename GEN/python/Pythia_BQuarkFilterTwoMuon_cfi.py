@@ -13,7 +13,7 @@ process.load('GeneratorInterface.genFilters.customthreemufilter_cfi')
 twomufilter = cms.EDFilter("CustomThreeMuFilter",
                                         NumRequired = cms.int32(2),
                                         ParticleID = cms.vint32(13,13),
-                                        PtMin = cms.vdouble(4, 4),
+                                        PtMin = cms.vdouble(3, 3),
                                         EtaMax = cms.vdouble(2.45, 2.45),
                                         Status = cms.vint32(1,1),
                                         invMassMin = cms.double(0.2),
