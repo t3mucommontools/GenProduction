@@ -1,6 +1,6 @@
 # GenProduction
 
-For generating events using PYTHIA8, login to lxplus and set up your workspace.
+
 
 ```
 export SCRAM_ARCH=slc7_amd64_gcc700
@@ -8,6 +8,7 @@ cmsrel CMSSW_10_2_18
 cd CMSSW_10_2_18/src
 cmsenv
 git clone git@github.com:T3MuAnalysisTools/GenProduction.git
+git clone git@github.com:T3MuAnalysisTools/GeneratorInterface.git
 scram b -j 8
 cd GenProduction
 ```
