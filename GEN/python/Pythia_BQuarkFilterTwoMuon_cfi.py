@@ -17,7 +17,7 @@ twomufilter = cms.EDFilter("CustomThreeMuFilter",
                                         EtaMax = cms.vdouble(2.45, 2.45),
                                         Status = cms.vint32(1,1),
                                         invMassMin = cms.double(0.2),
-                                        invMassMax = cms.double(1.7),
+                                        invMassMax = cms.double(1.8),
                                         maxDr = cms.double(0.8)
 )
 

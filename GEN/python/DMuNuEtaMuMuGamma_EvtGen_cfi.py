@@ -70,13 +70,13 @@ threemufilter = cms.EDFilter("CustomThreeMuFilter",
                                         NumRequired = cms.int32(3),
                                         AcceptMore = cms.bool(True),
                                         ParticleID = cms.vint32(13,13,13),
-                                        PtMin = cms.vdouble(.5, .5, .5),
-                                        EtaMax = cms.vdouble(2222.45, 2222.45, 2222.45),
+                                        PtMin = cms.vdouble(0.3, 0.3, 2),
+                                        EtaMax = cms.vdouble(24.5, 24.5, 24.5),
 #                                        PtMin = cms.vdouble(2.9, 2.9, 2.7),
 #                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
                                         Status          = cms.vint32(1,1,1),
                                         invMassMin      = cms.double(0),
-                                        invMassMax      = cms.double(222222),
+                                        invMassMax      = cms.double(2000),
                                         maxDr           = cms.double(1.5)
 )
 
@@ -94,7 +94,7 @@ multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
 
 
 
-ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter)*multimugenfilter)
-#ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter)*threemufilter)
+#ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter)*multimugenfilter)
+ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter)*threemufilter)
 
 
