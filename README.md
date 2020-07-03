@@ -51,5 +51,5 @@ Similarly to DIGI,
 ./configureAODJob.py  -s <Path to DIGI  Sample> -nu <Number of units> -tag <Tag>
 ```
 
-Number of units here should be large (to end up with 200-300 final AOD files).
+Number of units here should be large (to end up with 200-300 final AOD files or with 10000-15000 events per AOD)
 
