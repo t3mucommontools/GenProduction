@@ -28,7 +28,7 @@ multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
 )
 
 #  here is the tune of the TwoMuonsSameOrigin  filter
-threemufilter = cms.EDFilter("TwoMuonsSameOrigin",
+threemufilter = cms.EDFilter("ThreeMuonsSameOrigin",
                                         NumRequired = cms.int32(3),
                                         AcceptMore = cms.bool(True),
                                         ParticleID = cms.vint32(13,13,13),
