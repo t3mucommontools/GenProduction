@@ -1,17 +1,20 @@
 # GenProduction
 
 
-
-```
+First clone this repository
+```sh
 export SCRAM_ARCH=slc7_amd64_gcc700
 cmsrel CMSSW_10_2_18
 cd CMSSW_10_2_18/src
 cmsenv
-git clone git@github.com:T3MuAnalysisTools/GenProduction.git
+git clone git@github.com:t3mucommontools/GenProduction.git
 git clone git@github.com:T3MuAnalysisTools/GeneratorInterface.git
 scram b -j 8
 cd GenProduction
-```
+```sh
+
+Make sure you also cloned T3MuAnalysisTools/GeneratorInterface.git
+
 
 There are 3 directories: GEN, DIGI, AODSIM. 
 
@@ -19,9 +22,9 @@ GEN (GENeration):
 Pythia cards can be found in GEN/pythia, the QCD ( b-filter ) with muons filters for example is Pythia_BQuarkFilterTwoMuon_cfi.py.
 One can setup the configs as:
 
-```
+```sh
 ./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <number of jobs> -tag <Tag>
-```
+```sh
 
 where tag will be used as a prefix to produced samples, for me the command would look like
 
