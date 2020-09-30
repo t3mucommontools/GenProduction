@@ -10,6 +10,7 @@ if __name__ == "__main__":
     parser.add_argument("-s", "--input-sample",help="Path to the GEN sample; [Default: %(default)s] ", type = str, action="store", default = 'dat_as_cfi.py')
     parser.add_argument("-nu", "--nu",help="Units per job; [Default: %(default)s] ", action="store", default = 20)
     parser.add_argument("-tag", "--tag",help="Put the date tag for a conveniente navigation; [Default: %(default)s] ",  type=str, action="store", default = "10_03_2020")
+    parser.add_argument("-site", "--site",help="Site for storage; [Default: %(default)s] ",  type=str, action="store", default = "T2_US_Florida")
     args = parser.parse_args()
 
     sample = args.input_sample
@@ -36,8 +37,8 @@ if __name__ == "__main__":
     crabconf.write ("config.JobType.allowUndistributedCMSSW = True \n")
     crabconf.write ("config.JobType.pluginName = 'Analysis' \n")
     crabconf.write ("config.JobType.psetName = '%s'  \n"  % config)
-    crabconf.write ("config.JobType.maxMemoryMB = 5000 \n")
-    crabconf.write ("config.JobType.numCores = 4 \n")
+    crabconf.write ("config.JobType.maxMemoryMB = 2000 \n")
+    crabconf.write ("config.JobType.numCores = 1 \n")
     crabconf.write ("config.section_(\"Data\")  \n\n")
     crabconf.write ("config.Data.inputDataset = '%s' \n" % (sample) )
     crabconf.write ("config.Data.splitting = 'FileBased' \n")
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     crabconf.write ("config.Data.outputDatasetTag = '%s' \n" % (jobprefix+'_DIGI'+args.tag))
     crabconf.write ("config.Data.publication = True \n\n")
     crabconf.write ("config.section_(\"Site\") \n")
-    crabconf.write ("config.Site.storageSite = 'T2_US_Florida' \n")
+    crabconf.write ("config.Site.storageSite = '%s' \n" % args.site)
     crabconf.write ("dont_check_proxy =  1 \n")
 
 
