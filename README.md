@@ -13,7 +13,7 @@ scram b -j 8
 cd GenProduction
 ```
 
-Make sure you also cloned T3MuAnalysisTools/GeneratorInterface.git
+##Make sure you also cloned T3MuAnalysisTools/GeneratorInterface.git
 
 
 There are 3 directories: GEN, DIGI, AODSIM. 
