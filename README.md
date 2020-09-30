@@ -11,7 +11,7 @@ git clone git@github.com:t3mucommontools/GenProduction.git
 git clone git@github.com:T3MuAnalysisTools/GeneratorInterface.git
 scram b -j 8
 cd GenProduction
-```sh
+```
 
 Make sure you also cloned T3MuAnalysisTools/GeneratorInterface.git
 
@@ -24,7 +24,7 @@ One can setup the configs as:
 
 ```sh
 ./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <number of jobs> -tag <Tag>
-```sh
+```
 
 where tag will be used as a prefix to produced samples, for me the command would look like
 
