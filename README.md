@@ -38,6 +38,29 @@ Options are:
 * T2 site                     - Storage site, Florida by default, for Bari should be specificaly given -site T2_IT_Bari
 * T2 user name                - cherepan by default :) Everybody else should specify.
 
+Have a look also at the help message:
+
+./configureGenJob.py -h
+usage: configureGenJob.py [-h] [-f INPUT_FILE] [-ne NE] [-nj NJ] [-tag TAG]
+                          [-site SITE] [-user USER]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f INPUT_FILE, --input-file INPUT_FILE
+                        Name of the gen fragment file stored in pythia dir;
+                        [Default: dat_as_cfi.py]
+  -ne NE, --ne NE       Units per job; [Default: 10000]
+  -nj NJ, --nj NJ       NJOBS; [Default: 20]
+  -tag TAG, --tag TAG   Put the date tag for a conveniente navigation;
+                        [Default: 10_03_2020]
+  -site SITE, --site SITE
+                        Site for storage; [Default: T2_US_Florida]
+  -user USER, --user USER
+                        User Dir Base; [Default: cherepan]
+
+
+
+
 
 
 For example I want to submit MuNuEta(MuMuGamma), I do:
