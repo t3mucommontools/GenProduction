@@ -30,7 +30,7 @@ One can setup gen  configs as:
 
 Options are:
 
-* card name in pythia dir     - the process you want to generate, all are in pythia directory; Or create your own!
+* card name in pythia dir     - the process you want to generate, all are in pythia directory; Give a name to the config w/o pythia/ prefix.
 * Number of events per job    - 1000000 is found to be practicaly best
 * number of jobs              - Number of Jobs, one may just take maximum allowed - 10000
 * Tag                         - Tag that will be added as a prefix to all samples, in practice one can use date or something else to navigate sample in future. For example if you do several rounds you can set Tag to RoundI, RoundII ...
