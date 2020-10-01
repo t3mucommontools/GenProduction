@@ -3,7 +3,7 @@
 import os
 import sys
 import argparse
-#/DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/cherepan-DMuNuEta_MuMuGammaPi0-8dd0aec734ac5b9a5b01503b49b30d66/USER
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -55,5 +55,6 @@ if __name__ == "__main__":
 
 
 
-    print "Crab and gen fragment configured "
-
+    print "Crab and gen fragment configured: "
+    print "crab_cfg_"+jobprefix+".py"
+    print config

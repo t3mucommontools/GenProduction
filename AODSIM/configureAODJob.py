@@ -3,7 +3,7 @@
 import os
 import sys
 import argparse
-#/DMuNuEta_MuMuGammaPi0_GEN_11_03_2020/cherepan-DMuNuEta_MuMuGammaPi0-8dd0aec734ac5b9a5b01503b49b30d66/USER
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -39,7 +39,6 @@ if __name__ == "__main__":
     crabconf.write ("config.JobType.pluginName = 'Analysis' \n")
     crabconf.write ("config.JobType.psetName = '%s'  \n"  % config)
     crabconf.write ("config.JobType.maxMemoryMB = 2000 \n")
-#    crabconf.write ("config.JobType.numCores = 4 \n")
     crabconf.write ("config.section_(\"Data\")  \n\n")
     crabconf.write ("config.Data.inputDataset = '%s' \n" % (sample) )
     crabconf.write ("config.Data.splitting = 'FileBased' \n")
@@ -50,11 +49,11 @@ if __name__ == "__main__":
     crabconf.write ("config.Data.outputDatasetTag = '%s' \n" % (jobprefix+'_AOD'))
     crabconf.write ("config.Data.publication = True \n\n")
     crabconf.write ("config.section_(\"Site\") \n")
- #   crabconf.write ("config.Site.storageSite = 'T2_US_Florida' \n")
     crabconf.write ("config.Site.storageSite = '%s' \n" % args.site)
-#    crabconf.write ("config.Site.whitelist = ['T2_US_Florida'] \n")
     crabconf.write ("dont_check_proxy =  1 \n")
 
 
-    print "Crab and gen fragment configured "
 
+    print "Crab and gen fragment configured: "
+    print "crab_cfg_"+jobprefix+".py"
+    print config
