@@ -26,21 +26,17 @@ One can setup the configs as:
 ./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <number of jobs> -tag <Tag> -site T2_US_Florida -user cherepan
 ```
 
-where tag will be used as a prefix to produced samples, for me the command would look like
-
-```
-./configureGenJob.py -f Pythia_BQuarkFilterTwoMuon_cfi.py  -ne 1000000 -nj 10000 -tag VladimirGeneration22_06_2020
-```
+where tag will be used as a prefix to produced samples ( will help to navigate your samples in dache)
 
 For example I want to submit MuNuEta(MuMuGamma), I do:
-
 ```sh
 ./configureGenJob.py -f DMuNuEtaMuMuGamma_EvtGen_cfi.py -ne 1000000 -nj 10000 -tag Round01_10_2020 -site T2_US_Florida -user cherepan
 ```
+
 This will create corresponding fragment and crab config, output looks like:
 ```sh
 Crab and gen fragment configured:
-**crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py**
+__crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py__
 DMuNuEtaMuMuGamma_EvtGen_GEN.py
 ```
 And submit:
