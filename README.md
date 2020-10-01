@@ -23,7 +23,7 @@ Pythia cards can be found in GEN/pythia, the QCD ( b-filter ) with muons filters
 One can setup the configs as:
 
 ```sh
-./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <number of jobs> -tag <Tag>
+./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <number of jobs> -tag <Tag> -site T2_US_Florida -user cherepan
 ```
 
 where tag will be used as a prefix to produced samples, for me the command would look like
@@ -31,6 +31,26 @@ where tag will be used as a prefix to produced samples, for me the command would
 ```
 ./configureGenJob.py -f Pythia_BQuarkFilterTwoMuon_cfi.py  -ne 1000000 -nj 10000 -tag VladimirGeneration22_06_2020
 ```
+
+For example I want to submit MuNuEta(MuMuGamma), I do:
+
+```sh
+./configureGenJob.py -f DMuNuEtaMuMuGamma_EvtGen_cfi.py -ne 1000000 -nj 10000 -tag Round01_10_2020 -site T2_US_Florida -user cherepan
+```
+
+Output looks like
+```sh
+Crab and gen fragment configured:
+crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py
+DMuNuEtaMuMuGamma_EvtGen_GEN.py
+```
+And submit:
+
+```sh
+crab submit -c crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py
+```
+
+
 
 This will create corresponding fragment and crab config, the last can be submitted: crab submit -c <crab_config>.
 
