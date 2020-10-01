@@ -13,7 +13,7 @@ scram b -j 8
 cd GenProduction
 ```
 
-##Make sure you also cloned T3MuAnalysisTools/GeneratorInterface.git
+**Make sure you also cloned T3MuAnalysisTools/GeneratorInterface.git**
 
 
 There are 3 directories: GEN, DIGI, AODSIM. 
@@ -37,22 +37,21 @@ For example I want to submit MuNuEta(MuMuGamma), I do:
 ```sh
 ./configureGenJob.py -f DMuNuEtaMuMuGamma_EvtGen_cfi.py -ne 1000000 -nj 10000 -tag Round01_10_2020 -site T2_US_Florida -user cherepan
 ```
-
-Output looks like
+This will create corresponding fragment and crab config, output looks like:
 ```sh
 Crab and gen fragment configured:
-crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py
+**crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py**
 DMuNuEtaMuMuGamma_EvtGen_GEN.py
 ```
 And submit:
 
 ```sh
-crab submit -c crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py
+crab submit -c **crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py**
 ```
 
 
 
-This will create corresponding fragment and crab config, the last can be submitted: crab submit -c <crab_config>.
+
 
 
 When generation is completed setup next step in DIGI:
