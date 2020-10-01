@@ -23,10 +23,19 @@ Pythia cards can be found in GEN/pythia, the QCD ( b-filter ) with muons filters
 One can setup the configs as:
 
 ```sh
-./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <number of jobs> -tag <Tag> -site T2_US_Florida -user cherepan
+./configureGenJob.py -f <card name in pythia dir> -ne <Number of events per job> -nj <Number of jobs> -tag <Tag> -site T2_US_Florida -user cherepan
 ```
 
-where tag will be used as a prefix to produced samples ( will help to navigate your samples in dache)
+Options are:
+
+* card name in pythia dir  - the process you want to generate, all are in pythia directory; Or create your own!
+* Number of events per job - 1000000 is found to be practicaly best
+* number of jobs           - Number of Jobs, one may just take maximum allowed - 10000
+* Tag                      - Tag that will be added as a prefix to all samples, in practice one can use date or something else to navigate sample in future
+* site                     - Storage site, Florida by default, for Bari should be specificaly given -site T2_IT_Bari
+* user                     - cherepan by default :) Everybody else should specify.
+
+
 
 For example I want to submit MuNuEta(MuMuGamma), I do:
 ```sh
@@ -36,13 +45,13 @@ For example I want to submit MuNuEta(MuMuGamma), I do:
 This will create corresponding fragment and crab config, output looks like:
 ```sh
 Crab and gen fragment configured:
-__crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py__
+crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py
 DMuNuEtaMuMuGamma_EvtGen_GEN.py
 ```
-And submit:
+And now you can just submit:
 
 ```sh
-crab submit -c **crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py**
+crab submit -c crab_cfg_DMuNuEtaMuMuGamma_EvtGen.py
 ```
 
 
