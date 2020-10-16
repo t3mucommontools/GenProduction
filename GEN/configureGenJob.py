@@ -11,6 +11,8 @@ if __name__ == "__main__":
     parser.add_argument("-ne", "--ne",help="Units per job; [Default: %(default)s] ", action="store", default = 10000)
     parser.add_argument("-nj", "--nj",help="NJOBS; [Default: %(default)s] ", action="store", default = 20)
     parser.add_argument("-tag", "--tag",help="Put the date tag for a conveniente navigation; [Default: %(default)s] ",  type=str, action="store", default = "10_03_2020")
+    parser.add_argument("-site", "--site",help="Site for storage; [Default: %(default)s] ",  type=str, action="store", default = "T2_US_Florida")
+    parser.add_argument("-user", "--user",help="User Dir Base; [Default: %(default)s] ",  type=str, action="store", default = "cherepan")
     args = parser.parse_args()
 
     datasetsFile = 'python/'+args.input_file
@@ -54,7 +56,7 @@ if __name__ == "__main__":
     crabconf.write ("config.Data.outputDatasetTag = '%s' \n" % (jobprefix +"_"+args.tag ))
     crabconf.write ("config.Data.publication = True \n\n")
     crabconf.write ("config.section_(\"Site\") \n")
-    crabconf.write ("config.Site.storageSite = 'T2_US_Florida' \n")
+    crabconf.write ("config.Site.storageSite = '%s' \n" % args.site)
     crabconf.write ("dont_check_proxy =  1 \n")
 
 

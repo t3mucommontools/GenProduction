@@ -8,18 +8,19 @@ process.load('GeneratorInterface.genFilters.customthreemufilter_cfi')
 
 
 
-
-
-twomufilter = cms.EDFilter("CustomThreeMuFilter",
-                                        NumRequired = cms.int32(2),
-                                        ParticleID = cms.vint32(13,13),
-                                        PtMin = cms.vdouble(0.3, 0.3),
-                                        EtaMax = cms.vdouble(245, 245),
-                                        Status = cms.vint32(1,1),
-                                        invMassMin = cms.double(0.2),
-                                        invMassMax = cms.double(1.8),
-                                        maxDr = cms.double(0.8)
+threemufilter = cms.EDFilter("CustomThreeMuFilter",
+                                        NumRequired = cms.int32(3),
+                                        ParticleID = cms.vint32(13,13,13),
+                                        PtMin = cms.vdouble(3, 3, 2),
+                                        EtaMax = cms.vdouble(2.41, 2.41, 2.41),
+                                        Status          = cms.vint32(1,1,1),
+                                        invMassMin      = cms.double(1.6),
+                                        invMassMax      = cms.double(2.2),
+                                        maxDr           = cms.double(0.8)
 )
+
+
+
 
 
 
@@ -49,7 +50,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
 
 
-ProductionFilterSequence = cms.Sequence(generator*twomufilter)
+ProductionFilterSequence = cms.Sequence(generator*threemufilter)
 
 
 
