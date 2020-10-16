@@ -50,7 +50,7 @@ if __name__ == "__main__":
     crabconf.write ("NJOBS = %s \n" % args.nj)
     crabconf.write ("config.Data.totalUnits = config.Data.unitsPerJob * NJOBS \n")
     crabconf.write ("config.Data.inputDBS = 'phys03' \n")
-    crabconf.write ("config.Data.outLFNDirBase = '/store/user/cherepan/' \n")
+    crabconf.write ("config.Data.outLFNDirBase = '/store/user/mmadhu/GEN' \n")
     crabconf.write ("config.Data.outputDatasetTag = '%s' \n" % (jobprefix +"_"+args.tag ))
     crabconf.write ("config.Data.publication = True \n\n")
     crabconf.write ("config.section_(\"Site\") \n")

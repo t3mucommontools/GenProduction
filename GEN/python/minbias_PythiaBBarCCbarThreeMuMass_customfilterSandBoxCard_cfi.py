@@ -32,12 +32,12 @@ threemufilter = cms.EDFilter("ThreeMuonsSameOrigin",
                                         NumRequired = cms.int32(3),
                                         AcceptMore = cms.bool(True),
                                         ParticleID = cms.vint32(13,13,13),
-                                        PtMin = cms.vdouble(0, 0, 0),   # dummy values so that ell events pass
-                                        EtaMax = cms.vdouble(99, 99, 99),# dummy values so that ell events pass
+                                        PtMin = cms.vdouble(2.9,2.9,1.9),
+                                        EtaMax = cms.vdouble(2.45,2.45,2.45),
                                         Status = cms.vint32(1,1,1),
-                                        invMassMin      = cms.double(0),# dummy values so that ell events pass
-                                        invMassMax      = cms.double(1000),# dummy values so that ell events pass
-                                        maxDr           = cms.double(15)# dummy values so that ell events pass
+                                        invMassMin      = cms.double(0),
+                                        invMassMax      = cms.double(1000),
+                                        maxDr           = cms.double(1.2)
 )
 
 
