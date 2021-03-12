@@ -1,7 +1,7 @@
 # GenProduction
 
 
-First clone this repository
+How to setup: 
 ```sh
 export SCRAM_ARCH=slc7_amd64_gcc700
 cmsrel CMSSW_10_2_18
