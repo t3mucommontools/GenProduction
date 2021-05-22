@@ -45,7 +45,7 @@ if __name__ == "__main__":
     crabconf.write ("config.Data.unitsPerJob = %s \n" % args.nu)
     crabconf.write ("config.Data.totalUnits = -1 \n")
     crabconf.write ("config.Data.inputDBS = 'phys03' \n")
-    crabconf.write ("config.Data.outLFNDirBase = '/store/user/%s/' \n" % args.user)
+    crabconf.write ("config.Data.outLFNDirBase = '/store/user/mmadhu/AODSIM' \n")
     crabconf.write ("config.Data.outputDatasetTag = '%s' \n" % (jobprefix+'_AOD'))
     crabconf.write ("config.Data.publication = True \n\n")
     crabconf.write ("config.section_(\"Site\") \n")
