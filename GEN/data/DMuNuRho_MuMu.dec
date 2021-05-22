@@ -11,7 +11,7 @@
 Alias      MyD+        D+
 Alias      MyD-        D-
 ChargeConj MyD+        MyD-
-Alias      MyRho       rho
+Alias      MyRho       rho0
 ChargeConj MyRho       MyRho
 #
 Decay MyD+
