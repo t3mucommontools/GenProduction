@@ -16,7 +16,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
                            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
                            user_decay_file = cms.vstring('GenProduction/GEN/data/DMuNuOmega_MuMu.dec'),
-                           list_forced_decays = cms.vstring('MyD+','MyD-','MyDs+','MyDs-'),
+                           list_forced_decays = cms.vstring('MyD+','MyD-'),
                            convertPythiaCodes = cms.untracked.bool(False),
                            operates_on_particles = cms.vint32()
                           ),
@@ -44,9 +44,6 @@ DFilter = cms.EDFilter("PythiaFilter",
     ParticleID = cms.untracked.int32(411)  #D_plus
 )
 
-DsFilter = cms.EDFilter("PythiaFilter",
-    ParticleID = cms.untracked.int32(431)  #Ds_plus
-)
 
 
 MuFilter = cms.EDFilter("MCParticlePairFilter",
@@ -66,10 +63,21 @@ multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
                                         Status = cms.vint32(1,1,1)
 )
 
+threemufilter = cms.EDFilter("CustomThreeMuFilter",
+                                        NumRequired = cms.int32(3),
+                                        AcceptMore = cms.bool(True),
+                                        ParticleID = cms.vint32(13,13,13),
+                                        PtMin = cms.vdouble(3, 3, 2),
+                                        EtaMax = cms.vdouble(2.41, 2.41, 2.41),
+                                        Status          = cms.vint32(1,1,1),
+                                        invMassMin      = cms.double(1.6),
+                                        invMassMax      = cms.double(2.2),
+                                        maxDr           = cms.double(0.8)
+)
 
 
 
-#ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter) * MuFilter)
-ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter) * multimugenfilter)
+
+ProductionFilterSequence = cms.Sequence(generator *  DFilter * threemufilter)
 
 
