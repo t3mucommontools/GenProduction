@@ -69,18 +69,18 @@ multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
 threemufilter = cms.EDFilter("CustomThreeMuFilter",
                                         NumRequired = cms.int32(3),
                                         ParticleID = cms.vint32(13,13,13),
-                                        PtMin = cms.vdouble(3, 3, 2),
+                                        PtMin = cms.vdouble(2, 2, 2),
                                         EtaMax = cms.vdouble(2.41, 2.41, 2.41),
                                         Status          = cms.vint32(1,1,1),
                                         invMassMin      = cms.double(1.6),
                                         invMassMax      = cms.double(2.2),
-                                        maxDr           = cms.double(0.8)
+                                        maxDr           = cms.double(1.2)
 )
 
 
 
 
 
-ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter)*threemufilter)
+ProductionFilterSequence = cms.Sequence(generator *  DsFilter * threemufilter)
 
 
