@@ -3,9 +3,9 @@
 
 How to setup: 
 ```sh
-export SCRAM_ARCH=slc7_amd64_gcc700
-cmsrel CMSSW_10_2_18
-cd CMSSW_10_2_18/src
+export SCRAM_ARCH=slc7_amd64_gcc820
+cmsrel CMSSW_11_0_0
+cd CMSSW_11_0_0/src
 cmsenv
 git clone git@github.com:t3mucommontools/GenProduction.git
 git clone git@github.com:T3MuAnalysisTools/GeneratorInterface.git
