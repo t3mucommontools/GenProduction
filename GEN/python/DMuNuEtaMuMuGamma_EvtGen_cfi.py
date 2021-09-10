@@ -76,8 +76,8 @@ threemufilter = cms.EDFilter("CustomThreeMuFilter",
                                         PtMin = cms.vdouble(3, 3, 2),
                                         EtaMax = cms.vdouble(2.41, 2.41, 2.41),
                                         Status          = cms.vint32(1,1,1),
-                                        invMassMin      = cms.double(1.6),
-                                        invMassMax      = cms.double(2.2),
+                                        invMassMin      = cms.double(0.2),
+                                        invMassMax      = cms.double(222.),
                                         maxDr           = cms.double(0.8)
 )
 
