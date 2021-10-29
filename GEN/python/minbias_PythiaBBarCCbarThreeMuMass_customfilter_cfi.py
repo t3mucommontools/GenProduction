@@ -31,12 +31,12 @@ multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
 threemufilter = cms.EDFilter("CustomThreeMuFilter",
                                         NumRequired = cms.int32(3),
                                         ParticleID = cms.vint32(13,13,13),
-                                        PtMin = cms.vdouble(0.0, 0.0, 0.0),
-                                        EtaMax = cms.vdouble(245, 245, 245),
+                                        PtMin = cms.vdouble(3.0, 3.0, 2.0),
+                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
                                         Status = cms.vint32(1,1,1),
-                                        invMassMin      = cms.double(1.),
-                                        invMassMax      = cms.double(2222.),
-                                        maxDr           = cms.double(0.8)
+                                        invMassMin      = cms.double(1.58),
+                                        invMassMax      = cms.double(2.20),
+                                        maxDr           = cms.double(1)
 )
 
 
@@ -104,8 +104,8 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 )
 
 
-ProductionFilterSequence = cms.Sequence(generator*mugenfilter)
-#ProductionFilterSequence = cms.Sequence(generator*threemufilter)
+#ProductionFilterSequence = cms.Sequence(generator*mugenfilter)
+ProductionFilterSequence = cms.Sequence(generator*threemufilter)
 
 
 #ProductionFilterSequence = cms.Sequence(generator+multimugenfilter)

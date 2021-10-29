@@ -16,7 +16,8 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
                            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
                            user_decay_file = cms.vstring('GenProduction/GEN/data/DMuNuEtaPrime_MuMuGamma.dec'),
-                           list_forced_decays = cms.vstring('MyD+','MyD-','MyDs+','MyDs-'),
+#                           list_forced_decays = cms.vstring('MyD+','MyD-','MyDs+','MyDs-'),
+                           list_forced_decays = cms.vstring('MyDs+','MyDs-'),
                            convertPythiaCodes = cms.untracked.bool(False),
                            operates_on_particles = cms.vint32()
                           ),
@@ -40,9 +41,9 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
 
 
-DFilter = cms.EDFilter("PythiaFilter",
-    ParticleID = cms.untracked.int32(411)  #D_plus
-)
+#DFilter = cms.EDFilter("PythiaFilter",
+#    ParticleID = cms.untracked.int32(411)  #D_plus
+#)
 
 DsFilter = cms.EDFilter("PythiaFilter",
     ParticleID = cms.untracked.int32(431)  #Ds_plus
@@ -81,6 +82,6 @@ threemufilter = cms.EDFilter("CustomThreeMuFilter",
 
 
 
-ProductionFilterSequence = cms.Sequence(generator *  DsFilter * threemufilter)
+ProductionFilterSequence = cms.Sequence(generator *  DsFilter * multimugenfilter)
 
 
