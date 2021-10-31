@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     print args.input_sample
 
-    jobprefix = args.input_sample.split("/")[1]
+    jobprefix = args.input_sample.split("/")[1] + args.tag
     config = jobprefix+"_MiniAOD.py"
     with open('miniaodToAOD_config.py', 'r') as file :
             filedata = file.read()
