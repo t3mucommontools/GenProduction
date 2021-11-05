@@ -44,7 +44,7 @@ if __name__ == "__main__":
     crabconf.write ("config.JobType.eventsPerLumi = 30000 \n")
     crabconf.write ("config.JobType.allowUndistributedCMSSW = True \n")
     crabconf.write ("config.JobType.numCores = 1 \n")
-    crabconf.write ("config.JobType.maxMemoryMB = 2000\n\n")
+    crabconf.write ("config.JobType.maxMemoryMB = 4000\n\n")
     crabconf.write ("config.section_(\"Data\")  \n\n")
     crabconf.write ("config.Data.outputPrimaryDataset = '%s' \n" % (jobprefix+"_GEN_"+args.tag) )
     crabconf.write ("config.Data.splitting = 'EventBased' \n")
