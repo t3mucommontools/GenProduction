@@ -12,7 +12,7 @@ if __name__ == "__main__":
     parser.add_argument("-nj", "--nj",help="NJOBS; [Default: %(default)s] ", action="store", default = 20)
     parser.add_argument("-tag", "--tag",help="Put the date tag for a conveniente navigation; [Default: %(default)s] ",  type=str, action="store", default = "10_03_2020")
     parser.add_argument("-site", "--site",help="Site for storage; [Default: %(default)s] ",  type=str, action="store", default = "T2_US_Florida")
-    parser.add_argument("-user", "--user",help="User Dir Base; [Default: %(default)s] ",  type=str, action="store", default = "cherepan")
+    parser.add_argument("-user", "--user",help="User name on T2; [Default: %(default)s] ",  type=str, action="store", default = "cherepan")
     args = parser.parse_args()
 
     datasetsFile = 'python/'+args.input_file
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     crabconf.write ("NJOBS = %s \n" % args.nj)
     crabconf.write ("config.Data.totalUnits = config.Data.unitsPerJob * NJOBS \n")
     crabconf.write ("config.Data.inputDBS = 'phys03' \n")
-    crabconf.write ("config.Data.outLFNDirBase = '/store/user/mmadhu/GEN' \n")
+    crabconf.write ("config.Data.outLFNDirBase = '/store/user/%s/' \n" % args.user)
     crabconf.write ("config.Data.outputDatasetTag = '%s' \n" % (jobprefix +"_"+args.tag ))
     crabconf.write ("config.Data.publication = True \n\n")
     crabconf.write ("config.section_(\"Site\") \n")
