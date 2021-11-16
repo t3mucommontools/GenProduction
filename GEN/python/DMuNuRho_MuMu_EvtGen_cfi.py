@@ -17,6 +17,8 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
                            user_decay_file = cms.vstring('GenProduction/GEN/data/DMuNuRho_MuMu.dec'),
                            list_forced_decays = cms.vstring('MyD+','MyD-'),
+                           list_forced_channels = cms.vint32(113),   # this implies so far ParentParticle ->  this (mu mu) mu nu
+                           nredecays_of_parent = cms.int32(600),   #  this should always be concluded empirically reagrding your filter
                            convertPythiaCodes = cms.untracked.bool(False),
                            operates_on_particles = cms.vint32()
                           ),
@@ -24,13 +26,24 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                          ),
 
                          PythiaParameters = cms.PSet(
-                          pythia8CommonSettingsBlock,
-                          pythia8CUEP8M1SettingsBlock,
-                          processParameters = cms.vstring(
-                           'SoftQCD:nonDiffractive = on',
-                           'SoftQCD:singleDiffractive = on',
-                           'SoftQCD:doubleDiffractive = on'
-                          ),
+                             pythia8CommonSettingsBlock,
+                             pythia8CUEP8M1SettingsBlock,
+                             processParameters = cms.vstring(
+                                 'ParticleDecays:limitTau0 = off',
+                                 'ParticleDecays:limitCylinder = on',
+                                 'ParticleDecays:xyMax = 2000',
+                                 'ParticleDecays:zMax = 4000',
+                                 #'HardQCD:all = on',
+                                 'HardQCD:hardccbar = on',
+                                 'HardQCD:hardbbbar = on',
+                                 'PhaseSpace:pTHatMin = 15',
+                                 'PhaseSpace:pTHatMax = 1000',
+                                 '130:mayDecay = on',
+                                 '211:mayDecay = on',
+                                 '321:mayDecay = on'
+                             ),
+
+
                           parameterSets = cms.vstring('pythia8CommonSettings',
                                                       'pythia8CUEP8M1Settings',
                                                       'processParameters',
@@ -82,6 +95,7 @@ threemufilter = cms.EDFilter("CustomThreeMuFilter",
 
 
 
-ProductionFilterSequence = cms.Sequence(generator * DFilter*threemufilter)
+#ProductionFilterSequence = cms.Sequence(generator*DFilter*threemufilter)
+ProductionFilterSequence = cms.Sequence(generator*DFilter*multimugenfilter)
 #ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter) * MuFilter)
 

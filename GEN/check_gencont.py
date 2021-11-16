@@ -16,7 +16,6 @@ from scipy.constants import c as speed_of_light
 from DataFormats.FWLite import Events, Handle
 from PhysicsTools.HeppyCore.utils.deltar import deltaR, deltaPhi
 # https://pypi.org/project/particle/
-from particle import Particle
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--files_per_job', dest='files_per_job', default=2    , type=int)
@@ -25,6 +24,7 @@ parser.add_argument('--verbose'      , dest='verbose'      , action='store_true'
 parser.add_argument('--destination'  , dest='destination'  , default='.'  , type=str)
 parser.add_argument('--maxevents'    , dest='maxevents'    , default=-1   , type=int)
 args = parser.parse_args()
+
 
 files_per_job = args.files_per_job
 jobid         = args.jobid
@@ -68,25 +68,6 @@ def isAncestor(a, p):
             return True
     return False
 
-def printAncestors(particle, ancestors=[], verbose=True):
-    for i in xrange(0, particle.numberOfMothers()):
-        mum = particle.mother(i)
-#         if mum is None: import pdb ; pdb.set_trace()
-        if abs(mum.pdgId())<8 or abs(mum.pdgId())==21: continue
-        if not mum.isLastCopy(): continue
-        try:
-            if verbose: print(' <-- ', Particle.from_pdgid(mum.pdgId()).name, end = '')
-            ancestors.append(mum)
-            printAncestors(mum, ancestors=ancestors, verbose=verbose)
-        except:
-            if verbose: print(' <-- ', 'pdgid', mum.pdgId(), end = '')
-            ancestors.append(mum)
-            printAncestors(mum, ancestors=ancestors, verbose=verbose)
-        else:
-            pass
-
-
-
 
     
 handles = OrderedDict()
@@ -105,7 +86,7 @@ handles['genInfo'] = ('generator'   , Handle('GenEventInfoProduct'           ))
 # files.sort()
 # files_to_process = list(list(zip(*[iter(files)]*files_per_job))[jobid])
 
-events = Events('DsMuNuEtaMuMuGamma_EvtGen_EvtGen_GEN_2018.root')
+events = Events('DMuNuRho_MuMu_EvtGen_GEN_2018.root')
 
 branches = [
     'run',
@@ -242,7 +223,7 @@ for i, event in enumerate(events):
    
     if verbose: print('=========>')
     
-    Ds_mesons = [ip for ip in event.genp if abs(ip.pdgId())==431]
+    Ds_mesons = [ip for ip in event.genp if abs(ip.pdgId())==411]
     D_mesons = [ip for ip in event.genp if abs(ip.pdgId())==411]
     
 #     bs =  [ip for ip in event.genp if abs(ip.pdgId())==511]
@@ -261,10 +242,11 @@ for i, event in enumerate(events):
         tofill['n_ds'] = len(Ds_mesons)
 
         daus = [Ds.daughter(idau).pdgId() for idau in range(Ds.numberOfDaughters())]
-        if verbose: print('\t%s %s pt %3.2f,\t genealogy: ' %(Particle.from_pdgid(Ds.pdgId()), str(daus), Ds.pt()), end='')
+        print( " D daugthers  ", daus)
+#        if verbose: print('\t%s %s pt %3.2f,\t genealogy: ' %(Particle.from_pdgid(Ds.pdgId()), str(daus), Ds.pt()), end='')
         ancestors = []
-        if verbose: print('\t', printAncestors(Ds, ancestors, verbose=True))
-        else: printAncestors(Ds, ancestors, verbose=False)
+#        if verbose: print('\t', printAncestors(Ds, ancestors, verbose=True))
+#        else: printAncestors(Ds, ancestors, verbose=False)
         
         # only save Ds->mumu
         if sum([abs(dau)==13 for dau in daus])<2: continue
@@ -461,11 +443,11 @@ for i, event in enumerate(events):
                         print('\t\t %d]-th B\t'%aa, ib.daughter(idau).pdgId())
         if len(muons)<3:
             print('--> muons')
-        if len(Dss)>1:
-            print('--> Dss')
-            for ij in Ds:
+        if len(Ds_mesons)>1:
+            print('--> Ds_mesons')
+            for ij in Ds_mesons:
                 if abs(ij.daughter(0).pdgId())!=13:
-                    pass
+                  pass
     
 fout.cd()
 ntuple.Write()

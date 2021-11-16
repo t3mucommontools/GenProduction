@@ -1,0 +1,41 @@
+#
+# This is the decay file for the decay D+ ->  Mu+ Nu Rho ( Mu+ Mu-)
+#
+#
+# NickName: 
+#
+# Tested: Never
+# By: 
+# Date: 
+#
+Alias      MyD+        D+
+Alias      MyD-        D-
+ChargeConj MyD+        MyD-
+Alias      MyRho       rho0
+ChargeConj MyRho       MyRho
+Alias      MyOmega     omega
+ChargeConj MyOmega     MyOmega
+
+#
+Decay MyD+   # total forced BR = 4.0e-03
+  0.600        MyRho       mu+     nu_mu   PHOTOS ISGW2; 
+  0.400        MyOmega     mu+     nu_mu   PHOTOS ISGW2; 
+Enddecay
+CDecay MyD-
+
+
+#
+Decay MyRho
+  1.000     mu+     mu-   PHOTOS VLL;
+Enddecay 
+
+
+Decay MyOmega
+  1.000     mu+     mu-   PHOTOS VLL;
+Enddecay
+
+
+End
+
+
+
