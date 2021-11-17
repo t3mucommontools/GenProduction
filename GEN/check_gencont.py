@@ -87,6 +87,8 @@ handles['genInfo'] = ('generator'   , Handle('GenEventInfoProduct'           ))
 # files_to_process = list(list(zip(*[iter(files)]*files_per_job))[jobid])
 
 events = Events('DMuNuRho_Omega_EvtGen_GEN_2018.root')
+#events = Events('DsMuNuEtaMuMuGamma_EvtGen_EvtGen_GEN_2018.root')
+
 
 branches = [
     'run',
@@ -198,7 +200,7 @@ start = time()
 maxevents = maxevents if maxevents>=0 else events.size() # total number of events in the files
 
 for i, event in enumerate(events):
-
+    print("event ---- ", i)
     if (i+1)>maxevents:
         break
         
@@ -225,12 +227,32 @@ for i, event in enumerate(events):
     
     Ds_mesons = [ip for ip in event.genp if abs(ip.pdgId())==411]
     D_mesons = [ip for ip in event.genp if abs(ip.pdgId())==411]
+    Omegas = [ip for ip in event.genp if abs(ip.pdgId())==223]
+    Rhos = [ip for ip in event.genp if abs(ip.pdgId())==113]
+    Etas = [ip for ip in event.genp if abs(ip.pdgId())==221]
     
 #     bs =  [ip for ip in event.genp if abs(ip.pdgId())==511]
     bs =  [ip for ip in event.genp if (abs(ip.pdgId())>500 and abs(ip.pdgId())<600) or (abs(ip.pdgId())>5000 and abs(ip.pdgId())<6000)]
     muons =  [ip for ip in event.genp if abs(ip.pdgId())==13 and ip.status()==1]
     bq = [ip for ip in event.genp if abs(ip.pdgId())==5 and ip.isHardProcess()]
     
+
+    for omega in Omegas:
+        daus = [omega.daughter(idau).pdgId() for idau in range(omega.numberOfDaughters())]
+        print( " omega daugthers  ", daus)
+
+
+    for rho in Rhos:
+        daus = [rho.daughter(idau).pdgId() for idau in range(rho.numberOfDaughters())]
+        print( " rho daugthers  ", daus)
+
+
+    for eta in Etas:
+        daus = [eta.daughter(idau).pdgId() for idau in range(eta.numberOfDaughters())]
+        print( " eta daugthers  ", daus)
+
+
+
     for Ds in Ds_mesons:
         
         for k, v in tofill.items(): 
@@ -243,6 +265,7 @@ for i, event in enumerate(events):
 
         daus = [Ds.daughter(idau).pdgId() for idau in range(Ds.numberOfDaughters())]
         print( " D daugthers  ", daus)
+
 #        if verbose: print('\t%s %s pt %3.2f,\t genealogy: ' %(Particle.from_pdgid(Ds.pdgId()), str(daus), Ds.pt()), end='')
         ancestors = []
 #        if verbose: print('\t', printAncestors(Ds, ancestors, verbose=True))
