@@ -86,7 +86,7 @@ handles['genInfo'] = ('generator'   , Handle('GenEventInfoProduct'           ))
 # files.sort()
 # files_to_process = list(list(zip(*[iter(files)]*files_per_job))[jobid])
 
-events = Events('DMuNuRho_MuMu_EvtGen_GEN_2018.root')
+events = Events('DMuNuRho_Omega_EvtGen_GEN_2018.root')
 
 branches = [
     'run',

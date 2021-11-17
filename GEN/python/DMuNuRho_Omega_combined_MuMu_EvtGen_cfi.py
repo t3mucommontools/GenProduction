@@ -17,8 +17,8 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
                            user_decay_file = cms.vstring('GenProduction/GEN/data/DMuNuRho_OmegaRho_Combined_MuMu.dec'),
                            list_forced_decays = cms.vstring('MyD+','MyD-'),
-                           list_forced_channels = cms.vint32(113),   # this implies so far ParentParticle ->  this (mu mu) mu nu
-                           nredecays_of_parent = cms.int32(600),   #  this should always be concluded empirically reagrding your filter
+                           list_forced_channels = cms.vint32(113,223),   # this implies so far ParentParticle ->  this (mu mu) mu nu
+                           nredecays_of_parent = cms.int32(800),         #  this should always be concluded empirically reagrding your filter
                            convertPythiaCodes = cms.untracked.bool(False),
                            operates_on_particles = cms.vint32()
                           ),
