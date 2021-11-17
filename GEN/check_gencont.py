@@ -86,8 +86,9 @@ handles['genInfo'] = ('generator'   , Handle('GenEventInfoProduct'           ))
 # files.sort()
 # files_to_process = list(list(zip(*[iter(files)]*files_per_job))[jobid])
 
-events = Events('DMuNuRho_Omega_EvtGen_GEN_2018.root')
+#events = Events('DMuNuRho_Omega_EvtGen_GEN_2018.root')
 #events = Events('DsMuNuEtaMuMuGamma_EvtGen_EvtGen_GEN_2018.root')
+events = Events('DsMuNuPhi_MuMu_EvtGen_GEN_2018.root')
 
 
 branches = [
@@ -225,9 +226,9 @@ for i, event in enumerate(events):
    
     if verbose: print('=========>')
     
-    Ds_mesons = [ip for ip in event.genp if abs(ip.pdgId())==411]
+    Ds_mesons = [ip for ip in event.genp if abs(ip.pdgId())==431]
     D_mesons = [ip for ip in event.genp if abs(ip.pdgId())==411]
-    Omegas = [ip for ip in event.genp if abs(ip.pdgId())==223]
+    Omegas = [ip for ip in event.genp if abs(ip.pdgId())==333]
     Rhos = [ip for ip in event.genp if abs(ip.pdgId())==113]
     Etas = [ip for ip in event.genp if abs(ip.pdgId())==221]
     

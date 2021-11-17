@@ -8,19 +8,12 @@
 # By: 
 # Date: 
 #
-Alias      MyD+        D+
-Alias      MyD-        D-
 Alias      MyDs+       D_s+
 Alias      MyDs-       D_s-
-ChargeConj MyD+        MyD-
 ChargeConj MyDs+       MyDs-
 Alias      MyPhi       phi
 ChargeConj MyPhi       MyPhi
 #
-Decay MyD+
-  1.000        MyPhi     mu+     nu_mu   PHOTOS ISGW2; 
-Enddecay
-CDecay MyD-
 
 Decay MyDs+
   1.000        MyPhi     mu+     nu_mu     PHOTOS ISGW2; 
@@ -28,7 +21,8 @@ Enddecay
 CDecay MyDs-
 
 #
-Decay MyPhi
-  1.000     mu+     mu-   PHOTOS VLL;
+Decay MyPhi  # total BR = 3.01e-04
+  0.953            mu+     mu-   PHOTOS VLL;
+  0.048     gamma  mu+     mu-   PHSP;	
 Enddecay 
 End

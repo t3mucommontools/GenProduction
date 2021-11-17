@@ -1,0 +1,27 @@
+#
+# This is the decay file for the decay D+/Ds ->  Mu+ Nu Eta' ( Mu+ Mu-)
+#
+#
+# NickName: 
+#
+# Tested: Never
+# By: 
+# Date: 
+#
+Alias      MyDs+       D_s+
+Alias      MyDs-       D_s-
+ChargeConj MyDs+       MyDs-
+Alias      MyEta       eta'
+ChargeConj MyEta       MyEta
+#
+
+Decay MyDs+
+  1.000        MyEta     mu+     nu_mu PHOTOS   ISGW2; 
+Enddecay
+CDecay MyDs-
+
+#
+Decay MyEta
+  1.000     mu+     mu-   PHOTOS SLL;
+Enddecay 
+End

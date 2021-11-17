@@ -15,15 +15,16 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                           EvtGen130 = cms.untracked.PSet(
                            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
                            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
-                           user_decay_file = cms.vstring('GenProduction/GEN/data/DMuNuRho_MuMu.dec'),
-                           list_forced_decays = cms.vstring('MyD+','MyD-'),
-                           list_forced_channels = cms.vint32(113),   # this implies so far ParentParticle ->  this (mu mu) mu nu
-                           nredecays_of_parent = cms.int32(800),   #  this should always be concluded empirically reagrding your filter
+                           user_decay_file = cms.vstring('GenProduction/GEN/data/DsMuNuPhi_MuMu_MuMuGamma.dec'),
+                           list_forced_decays = cms.vstring('MyDs+','MyDs-'),
+                           list_forced_channels = cms.vint32(333),   # this implies so far ParentParticle ->  this (mu mu) mu nu
+                           nredecays_of_parent = cms.int32(800),         #  this should always be concluded empirically reagrding your filter
                            convertPythiaCodes = cms.untracked.bool(False),
                            operates_on_particles = cms.vint32()
                           ),
                           parameterSets = cms.vstring('EvtGen130')
                          ),
+
 
                          PythiaParameters = cms.PSet(
                              pythia8CommonSettingsBlock,
@@ -43,7 +44,6 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                                  '321:mayDecay = on'
                              ),
 
-
                           parameterSets = cms.vstring('pythia8CommonSettings',
                                                       'pythia8CUEP8M1Settings',
                                                       'processParameters',
@@ -57,7 +57,9 @@ DFilter = cms.EDFilter("PythiaFilter",
     ParticleID = cms.untracked.int32(411)  #D_plus
 )
 
-
+DsFilter = cms.EDFilter("PythiaFilter",
+    ParticleID = cms.untracked.int32(431)  #Ds_plus
+)
 
 
 MuFilter = cms.EDFilter("MCParticlePairFilter",
@@ -68,6 +70,7 @@ MuFilter = cms.EDFilter("MCParticlePairFilter",
     ParticleID2 = cms.untracked.vint32(13)
 )
 
+
 multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
                                         NumRequired = cms.int32(3),
                                         AcceptMore = cms.bool(True),
@@ -77,13 +80,8 @@ multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
                                         Status = cms.vint32(1,1,1)
 )
 
-
-
-
-
 threemufilter = cms.EDFilter("CustomThreeMuFilter",
                                         NumRequired = cms.int32(3),
-                                        AcceptMore = cms.bool(True),
                                         ParticleID = cms.vint32(13,13,13),
                                         PtMin = cms.vdouble(3, 3, 2),
                                         EtaMax = cms.vdouble(2.41, 2.41, 2.41),
@@ -95,7 +93,7 @@ threemufilter = cms.EDFilter("CustomThreeMuFilter",
 
 
 
-#ProductionFilterSequence = cms.Sequence(generator*DFilter*threemufilter)
-ProductionFilterSequence = cms.Sequence(generator*DFilter*multimugenfilter)
-#ProductionFilterSequence = cms.Sequence(generator * ( DFilter + DsFilter) * MuFilter)
+
+
+ProductionFilterSequence = cms.Sequence(generator * DsFilter * multimugenfilter)
 
