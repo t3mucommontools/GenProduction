@@ -37,7 +37,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
             ),        
             operates_on_particles  = cms.vint32([15, -15]),    
             convertPythiaCodes     = cms.untracked.bool(False),
-            user_decay_file        = cms.vstring(
+            user_decay_embedded    = cms.vstring(
 """
 Alias      Mytau+       tau+
 Alias      Mytau-       tau-
