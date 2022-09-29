@@ -35,7 +35,11 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                                  'SoftQCD:doubleDiffractive = on',
                                  'PTFilter:filter = on', 
                                  'PTFilter:quarkToFilter = 5', 
-                                 'PTFilter:scaleToFilter = 1.0'
+                                 'PTFilter:scaleToFilter = 1.0',
+                                 '130:mayDecay = on',
+                                 '211:mayDecay = on',
+                                 '321:mayDecay = on'
+
                              ),
                              parameterSets = cms.vstring('pythia8CommonSettings',
                                                          'pythia8CUEP8M1Settings',
@@ -50,8 +54,8 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
 
 
-ProductionFilterSequence = cms.Sequence(generator*threemufilter)
-#ProductionFilterSequence = cms.Sequence(generator)
+#ProductionFilterSequence = cms.Sequence(generator*threemufilter)
+ProductionFilterSequence = cms.Sequence(generator)
 
 
 
