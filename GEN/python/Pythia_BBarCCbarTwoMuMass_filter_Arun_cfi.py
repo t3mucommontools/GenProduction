@@ -19,7 +19,7 @@ mugenfilter = cms.EDFilter("MCParticlePairFilter",
 
 
 multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
-                                        NumRequired = cms.int32(3),
+                                        NumRequired = cms.int32(2),
                                         ParticleID = cms.vint32(13,13,13),
                                         PtMin = cms.vdouble(0, 0, 0),
                                         EtaMax = cms.vdouble(2.45, 2.45, 2.45),
@@ -28,14 +28,14 @@ multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
 )
 
 
-threemufilter = cms.EDFilter("CustomThreeMuFilter",
-                                        NumRequired = cms.int32(3),
-                                        ParticleID = cms.vint32(13,13,13),
-                                        PtMin = cms.vdouble(3.0, 3.0, 2.0),
-                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
-                                        Status = cms.vint32(1,1,1),
-                                        invMassMin      = cms.double(1.58),
-                                        invMassMax      = cms.double(2.20),
+twomufilter = cms.EDFilter("CustomThreeMuFilter",
+                                        NumRequired = cms.int32(2),
+                                        ParticleID = cms.vint32(13,13),
+                                        PtMin = cms.vdouble(3.0, 3.0),
+                                        EtaMax = cms.vdouble(2.45, 2.45),
+                                        Status = cms.vint32(1,1),
+                                        invMassMin      = cms.double(0.2),
+                                        invMassMax      = cms.double(1.8),
                                         maxDr           = cms.double(1)
 )
 
@@ -105,7 +105,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
 
 #ProductionFilterSequence = cms.Sequence(generator*mugenfilter)
-ProductionFilterSequence = cms.Sequence(generator*threemufilter)
+ProductionFilterSequence = cms.Sequence(generator*twomufilter)
 #ProductionFilterSequence = cms.Sequence(generator)
 
 
