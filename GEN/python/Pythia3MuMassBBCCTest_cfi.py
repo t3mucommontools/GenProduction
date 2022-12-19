@@ -19,23 +19,23 @@ mugenfilter = cms.EDFilter("MCParticlePairFilter",
 
 
 multimugenfilter = cms.EDFilter("MCMultiParticleFilter",
-                                        NumRequired = cms.int32(3),
-                                        ParticleID = cms.vint32(13,13,13),
+                                        NumRequired = cms.int32(2),
+                                        ParticleID = cms.vint32(13,13),
                                         PtMin = cms.vdouble(0, 0, 0),
-                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
-                                        Status = cms.vint32(1,1,1)
+                                        EtaMax = cms.vdouble(2.45, 2.45),
+                                        Status = cms.vint32(1,1)
 
 )
 
 
-threemufilter = cms.EDFilter("CustomThreeMuFilter",
-                                        NumRequired = cms.int32(3),
-                                        ParticleID = cms.vint32(13,13,13),
-                                        PtMin = cms.vdouble(3.0, 3.0, 2.0),
-                                        EtaMax = cms.vdouble(2.45, 2.45, 2.45),
-                                        Status = cms.vint32(1,1,1),
-                                        invMassMin      = cms.double(1.58),
-                                        invMassMax      = cms.double(2.20),
+twomufilter = cms.EDFilter("CustomThreeMuFilter",
+                                        NumRequired = cms.int32(2),
+                                        ParticleID = cms.vint32(13,13),
+                                        PtMin = cms.vdouble(3.0, 3.0),
+                                        EtaMax = cms.vdouble(2.45, 2.45),
+                                        Status = cms.vint32(1,1),
+                                        invMassMin      = cms.double(0.2),
+                                        invMassMax      = cms.double(1.8),
                                         maxDr           = cms.double(1)
 )
 
@@ -96,7 +96,11 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
         )
     ),
     comEnergy = cms.double(13000.0),
+    nRepeat = cms.int32(25000), #  number of Redecays
+    Status = cms.vint32(1,1),  #  list of particles to re-Decay
     crossSection = cms.untracked.double(999),
+    ParticlesIDtoRedecay = cms.vint32(511, 521, 513, 523, 531, 533,  541, 5122, 411, 421, 413, 423, 431, 433,  415, 10411),
+    ReDecayConditions = cms.string("ThreeMuMass"), # or "ThreeMuMass"
 #    filterEfficiency = cms.untracked.double(0.0001),
     maxEventsToPrint = cms.untracked.int32(1),
     pythiaHepMCVerbosity = cms.untracked.bool(False),
@@ -105,7 +109,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
 
 #ProductionFilterSequence = cms.Sequence(generator*mugenfilter)
-ProductionFilterSequence = cms.Sequence(generator*threemufilter)
+ProductionFilterSequence = cms.Sequence(generator*twomufilter)
 #ProductionFilterSequence = cms.Sequence(generator)
 
 
