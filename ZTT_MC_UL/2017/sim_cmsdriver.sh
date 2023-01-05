@@ -1,0 +1,16 @@
+cmsDriver.py step1 \
+    --filein file:ZTau3Mu_BPH-RunIISummer19UL17GEN-evtgen.root \
+    --fileout file:ZTau3Mu_BPH-RunIISummer19UL17SIM-evtgen.root \
+    --mc \
+    --eventcontent RAWSIM \
+    --runUnscheduled \
+    --datatier GEN-SIM \
+    --conditions 106X_mc2017_realistic_v6 \
+    --beamspot Realistic25ns13TeVEarly2017Collision \
+    --step SIM \
+    --nThreads 4 \
+    --geometry DB:Extended \
+    --era Run2_2017 \
+    --python ZTau3Mu_SIM.py \
+	--no_exec \
+    -n -1

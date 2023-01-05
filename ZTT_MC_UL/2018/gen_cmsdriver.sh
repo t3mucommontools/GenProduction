@@ -1,0 +1,14 @@
+cmsDriver.py Configuration/GenProduction/python/ZTau3Mu.py 		\
+	--fileout file:ZTau3Mu_BPH-RunIISummer19UL18GEN-evtgen.root	\
+	--mc 																												\
+	--eventcontent RAWSIM 																			\
+	--datatier GEN 																							\
+	--conditions 106X_upgrade2018_realistic_v4 									\
+	--beamspot Realistic25ns13TeVEarly2018Collision 						\
+	--step GEN 																									\
+	--geometry DB:Extended 																			\
+	--era Run2_2018																							\
+	--nThreads 4																								\
+	--python ZTau3Mu_GEN.py 																		\
+	--no_exec \
+	-n 500

@@ -1,0 +1,18 @@
+cmsDriver.py step1 \
+  --filein file:ZTau3Mu_BPH-RunIISummer19UL18SIM-evtgen.root \
+  --fileout file:ZTau3Mu_BPH-RunIISummer19UL18DRP-evtgen.root \
+  --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer19ULPrePremix-UL18_106X_upgrade2018_realistic_v11_L1v1-v2/PREMIX" \
+  --mc                                                                \
+  --eventcontent PREMIXRAW                                            \
+  --runUnscheduled                                                    \
+  --datatier GEN-SIM-DIGI                                             \
+  --conditions 106X_upgrade2018_realistic_v11_L1v1                    \
+  --step DIGI,DATAMIX,L1,DIGI2RAW                                     \
+  --procModifiers premix_stage2                                       \
+  --nThreads 4                                                       \
+  --geometry DB:Extended                                              \
+  --datamix PreMix                                                    \
+  --era Run2_2018                                                     \
+  --python ZTau3Mu_DRP.py 			        \
+  --no_exec \
+  -n 20000

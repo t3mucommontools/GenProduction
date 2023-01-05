@@ -1,0 +1,15 @@
+cmsDriver.py step1 \
+  --filein file:ZTau3Mu_BPH-RunIISummer19UL18DRP-evtgen.root \
+  --fileout file:ZTau3Mu_BPH-RunIISummer19UL18HLT-evtgen.root \
+  --mc                                                                                \
+  --eventcontent RAWSIM                                                               \
+  --datatier GEN-SIM-RAW                                                              \
+  --conditions 102X_upgrade2018_realistic_v15                                         \
+  --customise_commands 'process.source.bypassVersionCheck = cms.untracked.bool(True)' \
+  --step HLT:2018v32                                                                  \
+  --nThreads 4                                                                        \
+  --geometry DB:Extended                                                              \
+  --era Run2_2018     \
+  --python ZTau3Mu_HLT.py \
+	--no_exec \
+  -n -1                                                                                            

@@ -1,0 +1,15 @@
+cmsDriver.py step1 \
+    --filein file:ZTau3Mu_BPH-RunIISummer19UL18RECO-evtgen.root \
+    --fileout file:ZTau3Mu_BPH-RunIISummer19UL18MINIAOD-evtgen.root \
+    --mc                                                                    \
+    --eventcontent MINIAODSIM                                               \
+    --runUnscheduled                                                        \
+    --datatier MINIAODSIM                                                   \
+    --conditions 106X_upgrade2018_realistic_v11_L1v1                        \
+    --step PAT                                                              \
+    --nThreads 4                                                            \
+    --geometry DB:Extended                                                  \
+    --era Run2_2018                                                \
+    --python ZTau3Mu_MINIAOD.py \
+    --no_exec \
+    -n -1 
