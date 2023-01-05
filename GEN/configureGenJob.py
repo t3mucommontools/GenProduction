@@ -30,7 +30,7 @@ if __name__ == "__main__":
             with open(config, 'w') as file:
                 file.write(filedata)
 
-    crabconf=open("crab_cfg_"+jobprefix+".py","w")
+    crabconf=open("crab_cfg_"+jobprefix,"w")
     crabconf.write ("from WMCore.Configuration import Configuration  \n")
     crabconf.write ("config = Configuration()  \n\n")
     crabconf.write ("config.section_(\"General\")  \n")
