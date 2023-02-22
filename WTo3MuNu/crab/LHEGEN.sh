@@ -1,4 +1,9 @@
-CUSTOM="import os ; process.externalLHEProducer.args=cms.vstring(os.path.abspath('ppW3MuNu_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz'))"
+if [ -z $CRAB_Id ]; then
+ CRAB_Id=1
+fi
+export SEED=$((123456 + $CRAB_Id))
+echo $SEED > SEED.txt
+CUSTOM="import os ; process.externalLHEProducer.args=cms.vstring(os.path.abspath('ppW3MuNu_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz')) ; process.load('Configuration.StandardSequences.Services_cff') ; process.RandomNumberGeneratorService=cms.Service('RandomNumberGeneratorService',generator=cms.PSet(initialSeed=cms.untracked.uint32($SEED)),externalLHEProducer=cms.PSet(initialSeed=cms.untracked.uint32($SEED)),VtxSmeared=cms.PSet(initialSeed=cms.untracked.uint32($SEED)))"
 cmsDriver.py Configuration/GenProduction/python/ppW3MuNu_fragment.py  \
   --mc                                                                \
   --eventcontent RAWSIM,LHE                                           \

@@ -7,4 +7,6 @@ cd CMSSW_10_6_30_patch1
 scramv1 b ProjectRename
 eval `scramv1 runtime -sh`
 cd ..
+./LHEGEN.sh
+
 cmsRun -e -j FrameworkJobReport.xml pset_LHEGEN.py
