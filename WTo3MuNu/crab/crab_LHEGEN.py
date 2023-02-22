@@ -8,13 +8,19 @@ config.General.workArea         = 'testLHEGEN'
 
 config.JobType.pluginName       = 'PrivateMC'
 config.JobType.psetName         = 'pset_LHEGEN.py'
-config.JobType.inputFiles       = ['pset_LHEGEN.py', 'CMSSW_10_6_30_patch1.tar']
+config.JobType.inputFiles       = [
+                                    'pset_LHEGEN.py',
+                                    'CMSSW_10_6_30_patch1.tar',
+                                    'ppW3MuNu_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz',
+                                  ]
 config.JobType.disableAutomaticOutputCollection = True
 config.JobType.numCores         = 4
 config.JobType.maxMemoryMB      = 10000
 config.JobType.maxJobRuntimeMin = 2750
 config.JobType.scriptExe        = 'run_LHE.sh'
-config.JobType.outputFiles      = ['LHEGEN.root']
+config.JobType.outputFiles      = [
+                                    'LHEGEN.root',
+                                  ]
 
 
 #config.Data.outputPrimaryDataset = 'WTo3MuNu_ptl0p5_drll0p01_TuneCP5_LO_13TeV_pythia8-madgraph'

@@ -8,5 +8,5 @@ cmsDriver.py Configuration/GenProduction/python/ppW3MuNu_fragment.py  \
   --geometry DB:Extended                                              \
   --era Run2_2018                                                     \
   --fileout file:LHEGEN.root                                          \
-  --nThreads 4                                                         \
-  -n 1 --no_exec --python_filename=pset_LHEGEN.py                     \
+  --nThreads 4                                                        \
+  -n 1 --no_exec --python_filename=pset_LHEGEN.py
