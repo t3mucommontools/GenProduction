@@ -2,10 +2,8 @@
 
 LHE and GEN events are produced in one single step using the gridpack in this directory. 
 Since crab cannot read on /eos, the gridpack is uploaded to the crab server together with the CMSSW working area, and a custom script calls cmsRun. 
-The pset file must be generated before submission. 
 
 ```bash
-./LHEGEN.sh
 crab submit crab_LHEGEN.sh
 ```
 
