@@ -1,3 +1,4 @@
+CUSTOM="import os ; process.externalLHEProducer.args=cms.vstring(os.path.abspath('ppW3MuNu_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz'))"
 cmsDriver.py Configuration/GenProduction/python/ppW3MuNu_fragment.py  \
   --mc                                                                \
   --eventcontent RAWSIM,LHE                                           \
@@ -9,4 +10,5 @@ cmsDriver.py Configuration/GenProduction/python/ppW3MuNu_fragment.py  \
   --era Run2_2018                                                     \
   --fileout file:LHEGEN.root                                          \
   --nThreads 4                                                        \
-  -n 1 --no_exec --python_filename=pset_LHEGEN.py
+  -n 2000 --no_exec --python_filename=pset_LHEGEN.py                  \
+  --customise_commands="$CUSTOM"
