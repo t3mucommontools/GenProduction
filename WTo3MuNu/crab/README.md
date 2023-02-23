@@ -16,3 +16,10 @@ config.Data.totalUnits    = int(5e+6)
 
 where unitsPerJob **must be identical** to what is written in the .sh file (and has no direct effect), while totalUnits is the total number of events we want. Crab will determine the number of jobs based on this numbers (2500 in this case). The value nEvents for the externalLHEProducer is overridden by the .sh file. 
 The output of this step is a .root file containing the LHE and GEN information, and a .txt file containing the random seed used for the generation. The SEED.txt file should not be downloaded when publishing the dataset. 
+
+In the crab_LHEGEN.sh modify accordingly:
+
+```python
+config.Data.outLFNDirBase = ' ... '
+config.Site.storageSite   = ' ... '
+```
