@@ -8,6 +8,7 @@ cmsDriver.py step1                                  \
   --geometry DB:Extended                            \
   --era Run2_2018                                   \
   --filein file:RECO.root                           \
+  --procModifiers run2_miniAOD_UL                   \
   --fileout file:MiniAOD.root                       \
   --python_filename pset_MiniAOD.py                 \
   -n -1 --no_exec --nThreads 4
