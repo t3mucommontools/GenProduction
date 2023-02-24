@@ -23,3 +23,22 @@ In the crab_LHEGEN.sh modify accordingly:
 config.Data.outLFNDirBase = ' ... '
 config.Site.storageSite   = ' ... '
 ```
+
+## SIM to MiniAOD
+From SIM onward, generation is done the standard way, that is specifying a pset and an input dataset in the crab config file. First generate the pset, then submit crab specifying the correct input dataset (from the previous step step). The chain order is:
+
+### SIM
+```bash
+./SIM.sh
+crab submit crab_SIM.py
+```
+
+### DigiRecoPremix
+```bash
+./DRPremix.sh
+crab submit crab_DRP.py
+```
+
+### HLT
+### RECO
+### MiniAOD
