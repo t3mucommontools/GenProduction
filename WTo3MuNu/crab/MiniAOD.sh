@@ -1,0 +1,13 @@
+cmsDriver.py step1                                  \
+  --mc                                              \
+  --eventcontent MINIAODSIM                         \
+  --runUnscheduled                                  \
+  --datatier MINIAODSIM                             \
+  --conditions 106X_upgrade2018_realistic_v11_L1v1  \
+  --step PAT                                        \
+  --geometry DB:Extended                            \
+  --era Run2_2018                                   \
+  --filein file:RECO.root                           \
+  --fileout file:MiniAOD.root                       \
+  --python_filename pset_MiniAOD.py                 \
+  -n -1 --no_exec --nThreads 4
