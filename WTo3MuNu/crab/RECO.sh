@@ -1,0 +1,13 @@
+cmsDriver.py step1                                  \
+  --mc                                              \
+  --eventcontent AODSIM                             \
+  --runUnscheduled                                  \
+  --datatier AODSIM                                 \
+  --conditions 106X_upgrade2018_realistic_v11_L1v1  \
+  --step RAW2DIGI,L1Reco,RECO,RECOSIM,EI            \
+  --geometry DB:Extended                            \
+  --era Run2_2018                                   \
+  --filein file:HLT.root                            \
+  --fileout file:RECO.root                          \
+  --python_filename pset_RECO.py                    \
+  -n -1 --no_exec --nThreads 4

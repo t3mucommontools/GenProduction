@@ -1,0 +1,13 @@
+cmsDriver.py step1                                                                    \
+  --mc                                                                                \
+  --eventcontent RAWSIM                                                               \
+  --datatier GEN-SIM-RAW                                                              \
+  --conditions 102X_upgrade2018_realistic_v15                                         \
+  --customise_commands 'process.source.bypassVersionCheck = cms.untracked.bool(True)' \
+  --step HLT:2018v32                                                                  \
+  --geometry DB:Extended                                                              \
+  --era Run2_2018                                                                     \
+  --filein file:DRPremix.root                                                         \
+  --fileout file:HLT.root                                                             \
+  --python_filename pset_HLT.py                                                       \
+  -n -1 --no_exec --nThreads 4
