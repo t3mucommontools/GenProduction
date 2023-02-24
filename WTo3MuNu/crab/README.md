@@ -25,20 +25,60 @@ config.Site.storageSite   = ' ... '
 ```
 
 ## SIM to MiniAOD
+
 From SIM onward, generation is done the standard way, that is specifying a pset and an input dataset in the crab config file. First generate the pset, then submit crab specifying the correct input dataset (from the previous step step). The chain order is:
 
 ### SIM
+
 ```bash
+cmsrel CMSSW_10_6_17_patch1 
+cd CMSSW_10_6_17_patch1/src
+eval `scramv1 runtime -sh`
+cd -
 ./SIM.sh
 crab submit crab_SIM.py
 ```
 
 ### DigiRecoPremix
+
 ```bash
+cmsrel CMSSW_10_6_17_patch1 
+cd CMSSW_10_6_17_patch1/src
+eval `scramv1 runtime -sh`
+cd -
 ./DRPremix.sh
 crab submit crab_DRP.py
 ```
 
 ### HLT
+
+```bash
+cmsrel CMSSW_10_2_16_UL
+cd CMSSW_10_2_16_UL/src
+eval `scramv1 runtime -sh`
+cd -
+./HLT.sh
+crab submit crab_HLT.py
+```
+
 ### RECO
+
+```bash
+cmsrel CMSSW_10_6_17_patch1 
+cd CMSSW_10_6_17_patch1/src
+eval `scramv1 runtime -sh`
+cd -
+./RECO.sh
+crab submit crab_RECO.py
+```
+
 ### MiniAOD
+
+```bash
+cmsrel CMSSW_10_6_20 
+cd CMSSW_10_6_20/src
+eval `scramv1 runtime -sh`
+cd -
+./MiniAOD.sh
+crab submit crab_MiniAOD.py
+```
