@@ -1,0 +1,13 @@
+cmsDriver.py step1                                                                    \
+  --mc                                                                                \
+  --eventcontent RAWSIM                                                               \
+  --datatier GEN-SIM-RAW                                                              \
+  --conditions 94X_mc2017_realistic_v15                                               \
+  --customise_commands 'process.source.bypassVersionCheck = cms.untracked.bool(True)' \
+  --step HLT:2e34v40                                                                  \
+  --geometry DB:Extended                                                              \
+  --era Run2_2017                                                                     \
+  --filein file:DRPremix.root                                                         \
+  --fileout file:HLT.root                                                             \
+  --python_filename pset_HLT.py                                                       \
+  -n -1 --no_exec --nThreads 4

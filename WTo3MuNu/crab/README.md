@@ -53,7 +53,7 @@ crab submit crab_DRP.py
 ### HLT
 
 ```bash
-cmsrel CMSSW_10_2_16_UL
+cmsrel CMSSW_10_2_16_UL # use CMSSW_9_4_14_UL_patch1 for 2017UL
 cd CMSSW_10_2_16_UL/src
 eval `scramv1 runtime -sh`
 cd -
