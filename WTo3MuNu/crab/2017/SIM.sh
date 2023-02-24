@@ -1,0 +1,14 @@
+cmsDriver.py step1                                  \
+  --mc                                              \
+  --eventcontent RAWSIM                             \
+  --runUnscheduled                                  \
+  --datatier GEN-SIM                                \
+  --conditions 106X_mc2017_realistic_v6             \
+  --beamspot Realistic25ns13TeVEarly2017Collision   \
+  --step SIM                                        \
+  --geometry DB:Extended                            \
+  --era Run2_2017                                   \
+  --filein file:LHEGEN.root                         \
+  --fileout file:SIM.root                           \
+  --python_filename pset_SIM.py                     \
+  -n -1 --no_exec --nThreads 4

@@ -1,0 +1,16 @@
+cmsDriver.py step1                                  \
+  --mc                                              \
+  --eventcontent PREMIXRAW                          \
+  --runUnscheduled                                  \
+  --datatier GEN-SIM-DIGI                           \
+  --conditions 106X_mc2017_realistic_v6             \
+  --step DIGI,DATAMIX,L1,DIGI2RAW                   \
+  --procModifiers premix_stage2                     \
+  --geometry DB:Extended                            \
+  --datamix PreMix                                  \
+  --era Run2_2017                                   \
+  --filein file:SIM.root                            \
+  --fileout file:DRPremix.root                      \
+  --python_filename pset_DRP.py                     \
+  --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX" \
+  -n -1 --no_exec --nThreads 4
