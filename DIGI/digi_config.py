@@ -33,7 +33,7 @@ process.source = cms.Source("PoolSource",
     dropDescendantsOfDroppedBranches = cms.untracked.bool(False),
     fileNames = cms.untracked.vstring(
     #'file:TSG-RunIIFall18GS-doublemu.root'
-    'file:DMuNuPhi_MuMuGamma_EvtGen_GEN_2018_635.root'
+    '/store/user/cherepan/z2tautau_3mu_GEN_KinFit/z2tautau_X3mu_CMSSW_10_2_20_UL_GEN_02_02_2023/230202_164221/0000/z2tautau_3mu_EvtGen_GEN_2018_184.root'
     ),
     inputCommands = cms.untracked.vstring(
         'keep *', 
