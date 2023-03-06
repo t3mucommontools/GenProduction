@@ -38,7 +38,7 @@ if __name__ == "__main__":
     crabconf.write ("config.JobType.allowUndistributedCMSSW = True \n")
     crabconf.write ("config.JobType.pluginName = 'Analysis' \n")
     crabconf.write ("config.JobType.psetName = '%s'  \n"  % config)
-    crabconf.write ("config.JobType.maxMemoryMB = 4000 \n")
+    crabconf.write ("config.JobType.maxMemoryMB = 2000 \n")
     crabconf.write ("config.JobType.numCores = 1 \n")
     crabconf.write ("config.section_(\"Data\")  \n\n")
     crabconf.write ("config.Data.inputDataset = '%s' \n" % (sample) )
