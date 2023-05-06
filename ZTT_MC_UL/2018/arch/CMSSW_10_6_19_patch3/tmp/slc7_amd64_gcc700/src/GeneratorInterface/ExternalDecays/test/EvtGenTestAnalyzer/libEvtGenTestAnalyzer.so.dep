@@ -1,4 +1,0 @@
-tmp/slc7_amd64_gcc700/src/GeneratorInterface/ExternalDecays/test/EvtGenTestAnalyzer/EvtGenTestAnalyzer.cc.o: \
- src/GeneratorInterface/ExternalDecays/test/EvtGenTestAnalyzer.cc \
- src/GeneratorInterface/ExternalDecays/test/EvtGenTestAnalyzer.h \
-

@@ -1,2 +1,0 @@
-ALL_SUBSYSTEMS+=EvtGenInterface
-subdirs_src_EvtGenInterface = src_EvtGenInterface_data

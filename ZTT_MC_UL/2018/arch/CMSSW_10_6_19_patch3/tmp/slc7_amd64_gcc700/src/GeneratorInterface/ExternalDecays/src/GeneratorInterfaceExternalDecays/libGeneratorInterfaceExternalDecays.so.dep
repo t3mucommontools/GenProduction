@@ -1,8 +1,0 @@
-tmp/slc7_amd64_gcc700/src/GeneratorInterface/ExternalDecays/src/GeneratorInterfaceExternalDecays/ConcurrentExternalDecayDriver.cc.o: \
- src/GeneratorInterface/ExternalDecays/src/ConcurrentExternalDecayDriver.cc \
- src/GeneratorInterface/ExternalDecays/interface/ConcurrentExternalDecayDriver.h \
-
-tmp/slc7_amd64_gcc700/src/GeneratorInterface/ExternalDecays/src/GeneratorInterfaceExternalDecays/ExternalDecayDriver.cc.o: \
- src/GeneratorInterface/ExternalDecays/src/ExternalDecayDriver.cc \
- src/GeneratorInterface/ExternalDecays/interface/ExternalDecayDriver.h \
-
