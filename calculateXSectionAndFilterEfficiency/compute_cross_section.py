@@ -21,8 +21,8 @@ if __name__ == "__main__":
 
     parser = OptionParser()
     parser.add_option('-f', '--datasets'      , dest="inputdataset",     default='datasets.txt',   help='primary dataset names')
-    parser.add_option('-n', '--nfiles'        , dest="nfiles",           default=int(5),           help='N files to analyse')
-    parser.add_option('-e', '--events'        , dest="events",           default=int(1e6),         help='number of events to calculate the cross section')
+    parser.add_option('-n', '--nfiles'        , dest="nfiles",           default=int(10),           help='N files to analyse')
+    parser.add_option('-e', '--events'        , dest="events",           default=int(2e6),         help='number of events to calculate the cross section')
     parser.add_option('-d', '--datatier'      , dest="datatier",         default='MINIAODSIM',     help='datatier (e.g. GEN-SIM, MINIAOD, ...)')
 #    parser.add_option('-i', '--dasinstance'   , dest="global",           default='global',         help='DAS isntance; global/phys03/etc')
     parser.add_option(      '--debug'         , dest="debug",            default=False,            help='use debug options (debug couts...)')
