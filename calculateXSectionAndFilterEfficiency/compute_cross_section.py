@@ -24,6 +24,7 @@ if __name__ == "__main__":
     parser.add_option('-n', '--nfiles'        , dest="nfiles",           default=int(5),           help='N files to analyse')
     parser.add_option('-e', '--events'        , dest="events",           default=int(1e6),         help='number of events to calculate the cross section')
     parser.add_option('-d', '--datatier'      , dest="datatier",         default='MINIAODSIM',     help='datatier (e.g. GEN-SIM, MINIAOD, ...)')
+#    parser.add_option('-i', '--dasinstance'   , dest="global",           default='global',         help='DAS isntance; global/phys03/etc')
     parser.add_option(      '--debug'         , dest="debug",            default=False,            help='use debug options (debug couts...)')
 
     (args, opts) = parser.parse_args(sys.argv)
@@ -37,6 +38,7 @@ if __name__ == "__main__":
         print '                debug                 = ' + str(debug)
         print '                dataset               = ' + args.inputdataset
         print '                Datatier              = ' + args.datatier
+ #       print '                DAS                   = ' + args.dasinstance
         print '                number of events      = ' + str(args.events)
         print
 
@@ -45,8 +47,8 @@ if __name__ == "__main__":
     with open(args.inputdataset) as f:
         for line in f:
             primary_dataset_name = line.strip()#args.inputdataset
-
-            instance=" instance=prod/phys03"
+  
+            instance=" instance=prod/global"
             command=das_cmd+" --query=\"dataset dataset="+primary_dataset_name+instance+"\""
 
 
