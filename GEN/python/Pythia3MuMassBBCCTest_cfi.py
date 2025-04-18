@@ -1,10 +1,10 @@
 import FWCore.ParameterSet.Config as cms
+import random
 
 from Configuration.Generator.Pythia8CommonSettings_cfi import *
 from Configuration.Generator.Pythia8CUEP8M1Settings_cfi import *
 process = cms.Process('GEN')
 process.load('GeneratorInterface.genFilters.customthreemufilter_cfi')
-
 
 
 
@@ -114,6 +114,22 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
     maxEventsToPrint = cms.untracked.int32(1),
     pythiaHepMCVerbosity = cms.untracked.bool(False),
     pythiaPylistVerbosity = cms.untracked.int32(1)
+)
+
+seed = random.randint(1, 900000000)
+RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
+    generator = cms.PSet(
+        initialSeed = cms.untracked.uint32(seed),
+        engineName = cms.untracked.string('HepJamesRandom')
+    ),
+    VtxSmeared = cms.PSet(  # ? add this block
+        initialSeed = cms.untracked.uint32(seed + 1),
+        engineName = cms.untracked.string('HepJamesRandom')
+    ),
+    g4SimHits = cms.PSet(
+        initialSeed = cms.untracked.uint32(seed + 2),
+        engineName = cms.untracked.string('HepJamesRandom')  # or 'TRandom3'
+    )
 )
 
 
