@@ -40,12 +40,12 @@ twomufilter = cms.EDFilter("CustomThreeMuFilter",
 )
 
 
-threemufilter = cms.EDFilter("MCMultiParticleFilter",  #Enough to filter out most events that don't pass the internal filter
+threemufilter = cms.EDFilter("MCMultiParticleFilter",  #Enough to filter out most events that don't pass the internal filter. Need to replicate what's in Pythia8Hadronizer
     NumRequired = cms.int32(3),              # Require 3 particles
     AcceptMore = cms.bool(True),            # Accept more than 3 if they pass too
     ParticleID = cms.vint32(13, 13, 13),     # All must be muons (PDG ID = 13)
-    PtMin = cms.vdouble(1.0, 1.0, 1.0),      # pT cuts: 3.0, 3.0, and 2.0 GeV
-    EtaMax = cms.vdouble(5.0, 5.0, 5.0),  # |?| < 2.45 for all
+    PtMin = cms.vdouble(1.0, 1.0, 1.0),      # pT cuts: 1.0 GeV
+    EtaMax = cms.vdouble(4.1, 4.1, 4.1),  # |?| < 2.45 for all
     Status = cms.vint32(1, 1, 1)             # Must be final-state particles (status = 1)
 )
 
