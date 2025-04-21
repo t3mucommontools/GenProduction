@@ -140,7 +140,7 @@ process.mix.input.fileNames = cms.untracked.vstring(
     '/store/mc/RunIIFall18GS/MinBias_TuneCP5_13TeV-pythia8/GEN-SIM/102X_upgrade2018_realistic_v9-v1/90010/0628AA45-D392-E811-A640-008CFA11125C.root',
 )
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '102X_upgrade2018_realistic_v20', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '102X_upgrade2018_realistic_v15', '')
 
 # Path and EndPath definitions
 process.digitisation_step = cms.Path(process.pdigi)
