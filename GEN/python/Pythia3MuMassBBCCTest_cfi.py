@@ -38,16 +38,35 @@ twomufilter = cms.EDFilter("CustomThreeMuFilter",
                                         maxDr           = cms.double(1)
 )
 
+threepartfilter = cms.EDFilter("CustomThreeParticleFilter",
+                               NumRequired     = cms.int32(2),
+                               ParticleID      = cms.vint32(13,13),
+                               PtMin           = cms.vdouble(1.0,1.0),
+                               EtaMax          = cms.vdouble(2.9,2.9),
+                               Status          = cms.vint32(1,1),
+                               invMassMin      = cms.double(1.39),
+                               invMassMax      = cms.double(2.11),
+                               maxDr           = cms.double(1.2)
+)
+
 
 threemufilter = cms.EDFilter("MCMultiParticleFilter",  #Enough to filter out most events that don't pass the internal filter. Need to replicate what's in Pythia8Hadronizer
     NumRequired = cms.int32(3),              # Require 3 particles
     AcceptMore = cms.bool(True),            # Accept more than 3 if they pass too
     ParticleID = cms.vint32(13, 13, 13),     # All must be muons (PDG ID = 13)
     PtMin = cms.vdouble(1.0, 1.0, 1.0),      # pT cuts: 1.0 GeV
-    EtaMax = cms.vdouble(4.1, 4.1, 4.1),  # |?| < 2.45 for all
+    EtaMax = cms.vdouble(2.9, 2.9, 2.9),  # |?| < 2.45 for all
     Status = cms.vint32(1, 1, 1)             # Must be final-state particles (status = 1)
 )
 
+twomuonfilter = cms.EDFilter("MCMultiParticleFilter",  #Enough to filter out most events that don't pass the internal filter. Need to replicate what's in Pythia8Hadronizer
+    NumRequired = cms.int32(2),              # Require 2 particles
+    AcceptMore = cms.bool(True),            # Accept more than 2 if they pass too
+    ParticleID = cms.vint32(13, 13),     # All must be muons (PDG ID = 13)
+    PtMin = cms.vdouble(1.0, 1.0),      # pT cuts: 1.0 GeV
+    EtaMax = cms.vdouble(2.9, 2.9),  # |?| < 2.9 for all
+    Status = cms.vint32(1, 1)             # Must be final-state particles (status = 1)
+)
 
 
 generator = cms.EDFilter("Pythia8GeneratorFilter",
@@ -70,6 +89,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
             '130:mayDecay = on',
             '211:mayDecay = on',
             '321:mayDecay = on'
+            '22:mayDecay = on'
         ),
         pythia8CP5Settings = cms.vstring(
             'Tune:pp 14',
@@ -119,7 +139,8 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 #ProductionFilterSequence = cms.Sequence(generator*mugenfilter)
 #ProductionFilterSequence = cms.Sequence(generator*twomufilter)
 #ProductionFilterSequence = cms.Sequence(generator)
-ProductionFilterSequence = cms.Sequence(generator*threemufilter)
+#ProductionFilterSequence = cms.Sequence(generator*twomuonfilter)
+ProductionFilterSequence = cms.Sequence(generator*threepartfilter)
 
 
 #ProductionFilterSequence = cms.Sequence(generator+multimugenfilter)
