@@ -89,7 +89,6 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
             '130:mayDecay = on',
             '211:mayDecay = on',
             '321:mayDecay = on'
-            '22:mayDecay = on'
         ),
         pythia8CP5Settings = cms.vstring(
             'Tune:pp 14',
