@@ -17,13 +17,9 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
             '22:onMode = off',
             '23:onMode = off',
             '22:onIfAny = 15',
-            '23:onIfAny = 15',
-            '23:onIfMatch = 15 999015',  # Z ? tau TauM195
-            '999015:new = TauM195+ TauM195- 3 0 0 1.950 0.0 0.0 0.0',
-            '999015:tau0 = 8.7119688e-02',  # 87.1 mm decay length
-            '999015:isResonance = false',
-            '999015:m0 = 1.950',
-            '999015:mayDecay = on',
+            #'23:onIfAny = 15',
+            '23:onIfMatch = 15 -15',
+            '15:m0 = 1.95',
             #'15:AddChannel = on 0.00001 0 13 13 -13',
         ),
         parameterSets = cms.vstring(
@@ -37,23 +33,21 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
         EvtGen130 = cms.untracked.PSet(
             decay_table            = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
             particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
-            #decay_table            = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2014_NOLONGLIFE.DEC'),
-            #particle_property_file = cms.FileInPath('/afs/cern.ch/work/m/mmadhu/CMSSW_10_2_20_UL/src/GeneratorInterface/EvtGenInterface/data/evt_2014.pdl'),
             list_forced_decays     = cms.vstring(
                 'Mytau+'           ,
                 'Mytau-'           ,
             ),        
-            #operates_on_particles  = cms.vint32([15, -15]),    
-            operates_on_particles  = cms.vint32([999015, -999015]), 
+            operates_on_particles  = cms.vint32([15, -15]),    
             convertPythiaCodes     = cms.untracked.bool(False),
             user_decay_embedded    = cms.vstring(
 """
-Alias      Mytau-       TauM195-
-Alias      Mytau+       TauM195+
+Alias      Mytau+       tau+
+Alias      Mytau-       tau-
 ChargeConj Mytau+       Mytau-
 
+
 Decay Mytau+
-1.000 mu+ mu+ mu- PHSP;
+1.0000000 mu+ mu+ mu- PHSP;
 Enddecay
 CDecay Mytau-
 
@@ -72,12 +66,25 @@ End
 
 )
 
+ztt_tau3mu_filter = cms.EDFilter("PythiaFilterMultiAncestor",
+    ParticleID      = cms.untracked.int32(15),
+    MinPt           = cms.untracked.double(-1.),
+    MinEta          = cms.untracked.double(-1.e4),
+    MaxEta          = cms.untracked.double( 1.e4),
+    MotherIDs       = cms.untracked.vint32([22]),
+    DaughterIDs     = cms.untracked.vint32([13, 13, 13]),
+    DaughterMinPts  = cms.untracked.vdouble([-1., -1., -1.]),
+    DaughterMaxPts  = cms.untracked.vdouble([ 1.e6,  1.e6,  1.e6]),
+    DaughterMinEtas = cms.untracked.vdouble([-1.e4, -1.e4, -1.e4]),
+    DaughterMaxEtas = cms.untracked.vdouble([ 1.e4,  1.e4,  1.e4]),
+)
+
 z_mass_filter = cms.EDFilter("MCParticlePairFilter",
     MaxInvMass = cms.untracked.double(120.0),
     MinInvMass = cms.untracked.double(60.0),
     ParticleCharge = cms.untracked.int32(-3),
     ParticleID1 = cms.untracked.vint32(15),
-    ParticleID2 = cms.untracked.vint32(999015)
+    ParticleID2 = cms.untracked.vint32(15)
 )
 
 configurationMetadata = cms.untracked.PSet(

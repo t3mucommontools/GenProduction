@@ -17,7 +17,9 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
             '22:onMode = off',
             '23:onMode = off',
             '22:onIfAny = 15',
-            '23:onIfAny = 15',
+            #'23:onIfAny = 15',
+            '23:onIfMatch = 15 -15',
+            '15:m0 = 1.65',
             #'15:AddChannel = on 0.00001 0 13 13 -13',
         ),
         parameterSets = cms.vstring(
@@ -57,6 +59,10 @@ End
         ),
         parameterSets = cms.vstring('EvtGen130'),
     ),
+    nRepeat = cms.int32(0), #  number of Redecays
+    crossSection = cms.untracked.double(999),
+    ParticlesIDtoRedecay = cms.vint32(99999),
+    ReDecayConditions = cms.string("ThreeMuMass"), # or "ThreeMuMass"
 
 )
 
